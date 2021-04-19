@@ -1,16 +1,17 @@
 package com.sies.cyber.fragments;
 
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.sies.cyber.R;
+import com.sies.cyber.Topic_1;
+import com.sies.cyber.Topic_2;
 
 import java.util.ArrayList;
 
@@ -49,7 +50,19 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.myViewHolder>{
             image = itemView.findViewById(R.id.imageView);
             //title = itemView.findViewById(R.id.textView);
 
-            itemView.setOnClickListener(view -> Toast.makeText(view.getContext(),"Clicked on " + getAdapterPosition(),Toast.LENGTH_SHORT).show());
+            //itemView.setOnClickListener(view -> Toast.makeText(view.getContext(),"Clicked on " + getAdapterPosition(),Toast.LENGTH_SHORT).show());
+            itemView.setOnClickListener(this::onClick);
+        }
+
+        private void onClick(View view) {
+            switch (getAdapterPosition()) {
+                case 0:
+                    view.getContext().startActivity(new Intent(view.getContext(), Topic_1.class));
+                    break;
+                case 1:
+                    view.getContext().startActivity(new Intent(view.getContext(), Topic_2.class));
+                    break;
+            }
         }
     }
 }
