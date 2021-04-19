@@ -5,6 +5,8 @@ import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import static java.lang.Thread.sleep;
+
 public class SplashScreen extends AppCompatActivity {
 
     @Override
@@ -12,8 +14,27 @@ public class SplashScreen extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_splash_screen);
 
-        Intent intent = new Intent(SplashScreen.this, MainActivity.class);
-        startActivity(intent);
+
+
+        Thread timer = new Thread(){
+            public void run(){
+                try {
+                    sleep(1500);
+                }
+                catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+                finally {
+                    Intent intent = new Intent(SplashScreen.this, MainActivity.class);
+                    startActivity(intent);
+                }
+            }
+        };
+        timer.start();
+    }
+    @Override
+    protected void onPause(){
+        super.onPause();
         finish();
     }
 }

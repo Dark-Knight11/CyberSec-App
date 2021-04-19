@@ -5,6 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -47,6 +48,8 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.myViewHolder>{
             super(itemView);
             image = itemView.findViewById(R.id.imageView);
             title = itemView.findViewById(R.id.textView);
+
+            itemView.setOnClickListener(view -> Toast.makeText(view.getContext(),"Clicked on " + getAdapterPosition(),Toast.LENGTH_SHORT).show());
         }
     }
 }
