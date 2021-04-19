@@ -5,40 +5,42 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginHorizontal="10dp"
-    android:layout_marginVertical="20dp"
+    android:layout_marginVertical="10dp"
     android:background="#333335">
 
 
     <androidx.cardview.widget.CardView
-        android:layout_width="150dp"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:cardElevation="10dp"
-        android:layout_marginVertical="10dp"
+        android:layout_marginVertical="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:cardCornerRadius="10dp">
+        app:cardCornerRadius="15dp">
         <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#000000">
             <ImageView
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/ic_baseline_architecture_24"
+                android:layout_width="170dp"
+                android:layout_height="203dp"
+                android:src="@drawable/application_security"
                 android:layout_centerHorizontal="true"
                 android:id="@+id/imageView"
-                android:padding="23dp" />
-            <TextView
+                 />
+            <!--TextView            //for text
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:id="@+id/textView"
-                android:layout_below="@id/imageView"
                 android:textSize="22sp"
                 android:text="First"
                 android:textStyle="bold"
-                android:layout_centerHorizontal="true"/>
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="70dp"
+                /-->
 
 
         </RelativeLayout>

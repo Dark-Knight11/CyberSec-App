@@ -32,7 +32,7 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.myViewHolder>{
     @Override
     public void onBindViewHolder(@NonNull myViewHolder holder, int position) {
         holder.image.setImageResource(dataHolder.get(position).getImage());
-        holder.title.setText(dataHolder.get(position).getTitle());
+        //holder.title.setText(dataHolder.get(position).getTitle());
     }
 
     @Override
@@ -42,12 +42,12 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.myViewHolder>{
 
     class myViewHolder extends RecyclerView.ViewHolder {
         ImageView image;
-        TextView title;
+        //TextView title;
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
             image = itemView.findViewById(R.id.imageView);
-            title = itemView.findViewById(R.id.textView);
+            //title = itemView.findViewById(R.id.textView);
 
             itemView.setOnClickListener(view -> Toast.makeText(view.getContext(),"Clicked on " + getAdapterPosition(),Toast.LENGTH_SHORT).show());
         }

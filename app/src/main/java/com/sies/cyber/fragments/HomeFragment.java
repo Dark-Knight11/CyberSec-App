@@ -79,50 +79,25 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
         mRecyclerView = view.findViewById(R.id.topic_recyclerview);
-        //GridLayoutManager gridLayoutManager = new GridLayoutManager(this,2, GridLayoutManager.VERTICAL,false);
-        //mRecyclerView.setLayoutManager(gridLayoutManager);
-        //mRecyclerView.setHasFixedSize(true);
-        //mRecyclerView.setAdapter(adapter);
 
         mRecyclerView.setLayoutManager(new GridLayoutManager(getContext(),2,VERTICAL,false));
         dataHolder = new ArrayList<>();
 
 
-        DataModel ob1 = new DataModel(R.drawable.ic_baseline_architecture_24,"First Topic");
+        DataModel ob1 = new DataModel(R.drawable.application_security,"Application Security");
         dataHolder.add(ob1);
 
-        DataModel ob2 = new DataModel(R.drawable.ic_baseline_beenhere_24,"Second Topic");
+        DataModel ob2 = new DataModel(R.drawable.cloud_security,"Cloud Security");
         dataHolder.add(ob2);
 
-        DataModel ob3 = new DataModel(R.drawable.ic_baseline_backpack_24,"Third Topic");
+        DataModel ob3 = new DataModel(R.drawable.data_security,"Data Security");
         dataHolder.add(ob3);
 
-        DataModel ob4 = new DataModel(R.drawable.ic_baseline_assignment_ind_24,"Fourth Topic");
+        DataModel ob4 = new DataModel(R.drawable.linux_security,"Linux Essentials");
         dataHolder.add(ob4);
 
-        DataModel ob5 = new DataModel(R.drawable.ic_baseline_architecture_24,"Fifth Topic");
+        DataModel ob5 = new DataModel(R.drawable.wapt_security,"Web App Pen-Testing");
         dataHolder.add(ob5);
-
-        DataModel ob6 = new DataModel(R.drawable.ic_baseline_beenhere_24,"Sixth Topic");
-        dataHolder.add(ob6);
-
-        DataModel ob7 = new DataModel(R.drawable.ic_baseline_backpack_24,"Seventh Topic");
-        dataHolder.add(ob7);
-
-        DataModel ob8 = new DataModel(R.drawable.ic_baseline_assignment_ind_24,"Eight Topic");
-        dataHolder.add(ob8);
-
-        DataModel ob9 = new DataModel(R.drawable.ic_baseline_architecture_24,"Ninth Topic");
-        dataHolder.add(ob9);
-
-        DataModel ob10 = new DataModel(R.drawable.ic_baseline_beenhere_24,"Tenth Topic");
-        dataHolder.add(ob10);
-
-        DataModel ob11 = new DataModel(R.drawable.ic_baseline_backpack_24,"Eleventh Topic");
-        dataHolder.add(ob11);
-
-        DataModel ob12 = new DataModel(R.drawable.ic_baseline_assignment_ind_24,"Twelfth Topic");
-        dataHolder.add(ob12);
 
         mRecyclerView.setAdapter(new myAdapter(dataHolder));
 

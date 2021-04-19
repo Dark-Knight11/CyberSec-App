@@ -2,11 +2,11 @@ package com.sies.cyber.fragments;
 
 public class DataModel {
     int image;
-    String title;
+    //String title;
 
     public DataModel(int image, String title) {
         this.image = image;
-        this.title = title;
+        //this.title = title;
     }
 
     public int getImage() {
@@ -17,11 +17,11 @@ public class DataModel {
         this.image = image;
     }
 
-    public String getTitle() {
+    /*public String getTitle() {
         return title;
     }
 
     public void setTitle(String title) {
         this.title = title;
-    }
+    }*/
 }
