@@ -5,13 +5,17 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.sies.cyber.R;
-import com.sies.cyber.Topic_1;
-import com.sies.cyber.Topic_2;
+import com.sies.cyber.Topic_Application_Security;
+import com.sies.cyber.Topic_Cloud_Security;
+import com.sies.cyber.Topic_Data_Security;
+import com.sies.cyber.Topic_Linux_Essentials;
+import com.sies.cyber.Topic_WAPT_Security;
 
 import java.util.ArrayList;
 
@@ -57,12 +61,24 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.myViewHolder>{
         private void onClick(View view) {
             switch (getAdapterPosition()) {
                 case 0:
-                    view.getContext().startActivity(new Intent(view.getContext(), Topic_1.class));
+                    view.getContext().startActivity(new Intent(view.getContext(), Topic_Application_Security.class));
                     break;
                 case 1:
-                    view.getContext().startActivity(new Intent(view.getContext(), Topic_2.class));
+                    view.getContext().startActivity(new Intent(view.getContext(), Topic_Cloud_Security.class));
                     break;
+                case 2:
+                    view.getContext().startActivity(new Intent(view.getContext(), Topic_Data_Security.class));
+                    break;
+                case 3:
+                    view.getContext().startActivity(new Intent(view.getContext(), Topic_Linux_Essentials.class));
+                    break;
+                case 4:
+                    view.getContext().startActivity(new Intent(view.getContext(), Topic_WAPT_Security.class));
+                    break;
+
+
             }
+
         }
     }
 }

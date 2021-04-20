@@ -3,26 +3,20 @@ package com.sies.cyber;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.sies.cyber.fragments.DataModel;
-import com.sies.cyber.fragments.myAdapter;
-
 import java.util.ArrayList;
 
-import static android.widget.GridLayout.VERTICAL;
-
-public class Topic_1 extends AppCompatActivity {
+public class Topic_Linux_Essentials extends AppCompatActivity {
     RecyclerView mRecyclerView;
     ArrayList<DataModelInner> dataHolder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_topic_1);
-        mRecyclerView = findViewById(R.id.recView1);
+        setContentView(R.layout.linux_essentials_topic);
+        mRecyclerView = findViewById(R.id.recView);
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         dataHolder = new ArrayList<>();

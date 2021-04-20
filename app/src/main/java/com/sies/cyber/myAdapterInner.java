@@ -1,19 +1,13 @@
 package com.sies.cyber;
 
-import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
-
-import com.sies.cyber.R;
-import com.sies.cyber.Topic_1;
-import com.sies.cyber.Topic_2;
 
 import java.util.ArrayList;
 
@@ -35,7 +29,7 @@ public class myAdapterInner extends RecyclerView.Adapter<myAdapterInner.myViewHo
     @Override
     public void onBindViewHolder(@NonNull myViewHolder holder, int position) {
         holder.title.setText(dataHolder.get(position).getTitle());
-        holder.description.setText(dataHolder.get(position).getTitle());
+        holder.description.setText(dataHolder.get(position).getDescription());
     }
 
     @Override

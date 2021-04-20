@@ -11,8 +11,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
         tools:ignore="AllowBackup">
-        <activity android:name=".Topic_1" />
-        <activity android:name=".Topic_2" />
+        <activity android:name=".Topic_Application_Security" />
+        <activity android:name=".Topic_Cloud_Security" />
         <activity
             android:name=".SplashScreen"
             android:theme="@style/SplashScreen">
