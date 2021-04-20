@@ -13,6 +13,9 @@
         tools:ignore="AllowBackup">
         <activity android:name=".Topic_Application_Security" />
         <activity android:name=".Topic_Cloud_Security" />
+        <activity android:name=".Topic_Data_Security" />
+        <activity android:name=".Topic_Linux_Essentials" />
+        <activity android:name=".Topic_WAPT_Security" />
         <activity
             android:name=".SplashScreen"
             android:theme="@style/SplashScreen">

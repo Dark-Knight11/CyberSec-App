@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -75,8 +74,6 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.myViewHolder>{
                 case 4:
                     view.getContext().startActivity(new Intent(view.getContext(), Topic_WAPT_Security.class));
                     break;
-
-
             }
 
         }
