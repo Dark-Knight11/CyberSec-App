@@ -45,7 +45,6 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.myViewHolder>{
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
             image = itemView.findViewById(R.id.imageView);
-
             itemView.setOnClickListener(this::onClick);
         }
 

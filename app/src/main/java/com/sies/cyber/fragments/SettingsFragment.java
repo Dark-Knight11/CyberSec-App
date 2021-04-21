@@ -1,12 +1,18 @@
 package com.sies.cyber.fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
-import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.Toast;
 
+import androidx.fragment.app.Fragment;
+
+import com.google.firebase.auth.FirebaseAuth;
 import com.sies.cyber.R;
+import com.sies.cyber.Sign_In;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -55,10 +61,21 @@ public class SettingsFragment extends Fragment {
         }
     }
 
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_settings, container, false);
+        View RootView = inflater.inflate(R.layout.fragment_settings, container, false);
+        Button logOut = RootView.findViewById(R.id.button3);
+        logOut.setOnClickListener(this::onClick);
+        return RootView;
+    }
+
+    private void onClick(View v) {
+        FirebaseAuth.getInstance().signOut();
+        Toast.makeText(getContext(), "Logged Out", Toast.LENGTH_SHORT).show();
+        startActivity(new Intent(getActivity(), Sign_In.class));
     }
 }

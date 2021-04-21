@@ -17,7 +17,7 @@ import java.util.Objects;
 
 public class Sign_In extends AppCompatActivity implements View.OnClickListener{
 
-    private FirebaseAuth mAuth = FirebaseAuth.getInstance();
+    private FirebaseAuth mAuth;
     EditText editTextEmail, editTextPassword;
     ProgressBar progressBar;
     
