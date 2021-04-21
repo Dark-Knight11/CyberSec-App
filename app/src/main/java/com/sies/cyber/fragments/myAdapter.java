@@ -14,6 +14,7 @@ import com.sies.cyber.Topic_Application_Security;
 import com.sies.cyber.Topic_Cloud_Security;
 import com.sies.cyber.Topic_Data_Security;
 import com.sies.cyber.Topic_Linux_Essentials;
+import com.sies.cyber.Topic_Network_Security;
 import com.sies.cyber.Topic_WAPT_Security;
 
 import java.util.ArrayList;
@@ -44,7 +45,7 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.myViewHolder>{
         return dataHolder.size();
     }
 
-    class myViewHolder extends RecyclerView.ViewHolder {
+    static class myViewHolder extends RecyclerView.ViewHolder {
         ImageView image;
         //TextView title;
 
@@ -60,7 +61,7 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.myViewHolder>{
         private void onClick(View view) {
             switch (getAdapterPosition()) {
                 case 0:
-                    view.getContext().startActivity(new Intent(view.getContext(), Topic_Application_Security.class));
+                    view.getContext().startActivity(new Intent(view.getContext(), Topic_Network_Security.class));
                     break;
                 case 1:
                     view.getContext().startActivity(new Intent(view.getContext(), Topic_Cloud_Security.class));
@@ -73,6 +74,9 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.myViewHolder>{
                     break;
                 case 4:
                     view.getContext().startActivity(new Intent(view.getContext(), Topic_WAPT_Security.class));
+                    break;
+                case 5:
+                    view.getContext().startActivity(new Intent(view.getContext(), Topic_Application_Security.class));
                     break;
             }
 

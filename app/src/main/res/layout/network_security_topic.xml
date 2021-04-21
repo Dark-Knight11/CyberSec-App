@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".Topic_Application_Security">
+    tools:context=".Topic_Network_Security">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar"
@@ -32,7 +32,7 @@
         android:id="@+id/topic_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="@string/application_security"
+        android:text="@string/network_security"
         android:textColor="@color/white"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"

@@ -1,6 +1,8 @@
 package com.sies.cyber;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -25,6 +27,8 @@ public class Topic_Data_Security extends AppCompatActivity {
 
         TextView t = findViewById(R.id.topic_title);
         String topic = t.getText().toString();
+        ImageButton back = findViewById(R.id.backButton);
+        back.setOnClickListener(v -> startActivity(new Intent(Topic_Data_Security.this, MainActivity.class)));
 
         DataModelInner ob1 = new DataModelInner("Heading1","Description1",topic);
         dataHolder.add(ob1);

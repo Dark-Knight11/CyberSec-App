@@ -5,12 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.text.BreakIterator;
 import java.util.ArrayList;
 
 public class myAdapterInner extends RecyclerView.Adapter<myAdapterInner.myViewHolder>{
@@ -40,7 +38,7 @@ public class myAdapterInner extends RecyclerView.Adapter<myAdapterInner.myViewHo
         return dataHolder.size();
     }
 
-    class myViewHolder extends RecyclerView.ViewHolder {
+    static class myViewHolder extends RecyclerView.ViewHolder {
 
         TextView title;
         TextView description;
@@ -134,6 +132,25 @@ public class myAdapterInner extends RecyclerView.Adapter<myAdapterInner.myViewHo
                 }
             }
             else if(topic.equals("Web App Pen-Testing")) {
+                switch (getAdapterPosition()) {
+                    case 0:
+                        view.getContext().startActivity(new Intent(view.getContext(), ASTopic1.class));
+                        break;
+                    case 1:
+                        view.getContext().startActivity(new Intent(view.getContext(), ASTopic1.class));
+                        break;
+                    case 2:
+                        view.getContext().startActivity(new Intent(view.getContext(), ASTopic1.class));
+                        break;
+                    case 3:
+                        view.getContext().startActivity(new Intent(view.getContext(), ASTopic1.class));
+                        break;
+                    case 4:
+                        view.getContext().startActivity(new Intent(view.getContext(), ASTopic1.class));
+                        break;
+                }
+            }
+            else if(topic.equals("Network Security")) {
                 switch (getAdapterPosition()) {
                     case 0:
                         view.getContext().startActivity(new Intent(view.getContext(), ASTopic1.class));

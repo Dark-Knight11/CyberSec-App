@@ -11,6 +11,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
         tools:ignore="AllowBackup">
+        <activity android:name=".Topic_Network_Security" />
         <activity android:name=".Topic_Application_Security" />
         <activity android:name=".Topic_Cloud_Security" />
         <activity android:name=".Topic_Data_Security" />

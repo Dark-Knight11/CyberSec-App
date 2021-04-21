@@ -18,7 +18,8 @@
     <string name="wapt_security">Web App Pen-Testing</string>
     <string name="name">Name</string>
     <string name="age">Age</string>
-    <string name="username">@Username</string>
+    <string name="username">Username</string>
     <string name="email">E-mail</string>
     <string name="description">Description</string>
+    <string name="network_security">Network Security</string>
 </resources>

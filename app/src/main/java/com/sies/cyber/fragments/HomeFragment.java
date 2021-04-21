@@ -5,7 +5,6 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -14,8 +13,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.sies.cyber.R;
 
 import java.util.ArrayList;
-import java.util.List;
-import java.util.Objects;
 
 import static android.widget.GridLayout.VERTICAL;
 
@@ -84,7 +81,7 @@ public class HomeFragment extends Fragment {
         dataHolder = new ArrayList<>();
 
 
-        DataModel ob1 = new DataModel(R.drawable.application_security,"Application Security");
+        DataModel ob1 = new DataModel(R.drawable.network_sec,"Network Security");
         dataHolder.add(ob1);
 
         DataModel ob2 = new DataModel(R.drawable.cloud_security,"Cloud Security");
@@ -98,6 +95,9 @@ public class HomeFragment extends Fragment {
 
         DataModel ob5 = new DataModel(R.drawable.wapt_security,"Web App Pen-Testing");
         dataHolder.add(ob5);
+
+        DataModel ob6 = new DataModel(R.drawable.application_security,"Application Security");
+        dataHolder.add(ob6);
 
         mRecyclerView.setAdapter(new myAdapter(dataHolder));
 

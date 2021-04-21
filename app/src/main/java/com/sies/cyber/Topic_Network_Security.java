@@ -11,26 +11,26 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-public class Topic_Application_Security extends AppCompatActivity {
+public class Topic_Network_Security extends AppCompatActivity {
     RecyclerView mRecyclerView;
     ArrayList<DataModelInner> dataHolder;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.application_security_topic);
+        setContentView(R.layout.network_security_topic);
         mRecyclerView = findViewById(R.id.recView);
 
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
         dataHolder = new ArrayList<>();
 
+
         TextView t = findViewById(R.id.topic_title);
         String topic = t.getText().toString();
         ImageButton back = findViewById(R.id.backButton);
-        back.setOnClickListener(v -> startActivity(new Intent(Topic_Application_Security.this, MainActivity.class)));
+        back.setOnClickListener(v -> startActivity(new Intent(Topic_Network_Security.this, MainActivity.class)));
 
-
-        DataModelInner ob1 = new DataModelInner("Heading1","Description1",topic);
+        DataModelInner ob1 = new DataModelInner("What is IP?","Description1",topic);
         dataHolder.add(ob1);
 
         DataModelInner ob2 = new DataModelInner("Heading2","Description2",topic);
@@ -46,7 +46,5 @@ public class Topic_Application_Security extends AppCompatActivity {
         dataHolder.add(ob5);
 
         mRecyclerView.setAdapter(new myAdapterInner(dataHolder));
-
     }
-
 }
