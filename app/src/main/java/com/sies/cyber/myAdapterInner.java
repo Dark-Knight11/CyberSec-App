@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class myAdapterInner extends RecyclerView.Adapter<myAdapterInner.myViewHolder>{
-    public static final String TOPIC = "com.sies.cyber.TOPIC";
     ArrayList<DataModelInner> dataHolder;
 
     public myAdapterInner(ArrayList<DataModelInner> dataHolder) {
@@ -30,7 +29,7 @@ public class myAdapterInner extends RecyclerView.Adapter<myAdapterInner.myViewHo
     public void onBindViewHolder(@NonNull myViewHolder holder, int position) {
         holder.title.setText(dataHolder.get(position).getTitle());
         holder.description.setText(dataHolder.get(position).getDescription());
-        holder.topic = dataHolder.get(position).getTopic();
+        holder.topic_no = dataHolder.get(position).getTopic_no();
     }
 
     @Override
@@ -39,53 +38,43 @@ public class myAdapterInner extends RecyclerView.Adapter<myAdapterInner.myViewHo
     }
 
     class myViewHolder extends RecyclerView.ViewHolder {
-
         TextView title;
         TextView description;
-        String topic;
+        int topic_no;
 
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
             title = itemView.findViewById(R.id.activity_topic_title);
             description = itemView.findViewById(R.id.activity_topic_description);
-
-
-
             itemView.setOnClickListener(this::onClick);
         }
 
         private void onClick(View view) {
-            int number = getAdapterPosition();
-            if(topic.equals("Network Security")) {  //don't use switch
-                Intent intent = new Intent(view.getContext(), Topic1.class);
-                intent.putExtra(TOPIC,number);
-                view.getContext().startActivity(intent);
+            Intent intent;
+            switch(topic_no){
+                case 0:
+                    intent = new Intent(view.getContext(), Network_Security.class);
+                    break;
+                case 1:
+                    intent = new Intent(view.getContext(), Cloud_Security.class);
+                    break;
+                case 2:
+                    intent = new Intent(view.getContext(), Data_Security.class);
+                    break;
+                case 3:
+                    intent = new Intent(view.getContext(), Linux_Essentials.class);
+                    break;
+                case 4:
+                    intent = new Intent(view.getContext(), WAPT_Security.class);
+                    break;
+                case 5:
+                    intent = new Intent(view.getContext(), Application_Security.class);
+                    break;
+                default:
+                    throw new IllegalStateException("Unexpected value: " + topic_no);
             }
-            else if(topic.equals("Cloud Security")) {
-                Intent intent = new Intent(view.getContext(), Topic2.class);
-                intent.putExtra(TOPIC,number);
-                view.getContext().startActivity(intent);
-            }
-            else if(topic.equals("Data Security")) {
-                Intent intent = new Intent(view.getContext(), Topic3.class);
-                intent.putExtra(TOPIC,number);
-                view.getContext().startActivity(intent);
-            }
-            else if(topic.equals("Linux Essentials")) {
-                Intent intent = new Intent(view.getContext(), Topic4.class);
-                intent.putExtra(TOPIC,number);
-                view.getContext().startActivity(intent);
-            }
-            else if(topic.equals("Web App Pen-Testing")) {
-                Intent intent = new Intent(view.getContext(), Topic5.class);
-                intent.putExtra(TOPIC,number);
-                view.getContext().startActivity(intent);
-            }
-            else if(topic.equals("Application Security")) {
-                Intent intent = new Intent(view.getContext(), Topic6.class);
-                intent.putExtra(TOPIC,number);
-                view.getContext().startActivity(intent);
-            }
+            intent.putExtra("inTOPIC",getAdapterPosition());
+            view.getContext().startActivity(intent);
         }
     }
 }

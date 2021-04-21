@@ -7,26 +7,24 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Topic1 extends AppCompatActivity {
+public class Application_Security extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.astopic);
         Intent intent = getIntent();
 
-        int number = intent.getIntExtra(myAdapterInner.TOPIC,0);
+        int number = intent.getIntExtra("inTOPIC",0);
         String text = "", topic_table = "";
 
         ImageButton back = findViewById(R.id.backButton);
-        back.setOnClickListener(v -> startActivity(new Intent(Topic1.this, Topic_Network_Security.class)));
+        Intent in = new Intent(Application_Security.this, Topic_Common.class);
+        in.putExtra("TOPIC",5);
+        back.setOnClickListener(v -> startActivity(in));
 
         switch(number){
             case 0:
-                text = "An important relationship on networks is that of the server and the client. A server is a computer that holds content and services such as a website, a media file, or a chat application. A good example of a server is the computer that holds the website for Google’s search page: http://www.google.com. The server holds that page, and sends it out when requested.\n" +
-                        "\n" +
-                        "A client is a different computer, such as your laptop or cell phone, that requests to view, download, or use the content. The client can connect over a network to exchange information. For instance, when you request Google’s search page with your web browser, your computer is the client.\n" +
-                        "\n" +
-                        "In order to send and direct data across a network, computers need to be able to identify destinations and origins. This identification is an IP—Internet Protocol—address. An IP address is just a set of four numbers between 1 and 254, separated by dots. An example of an IP address is 173.194.43.7.";
-                topic_table = "What is IP?";
+                text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et purus a orci interdum eleifend. Morbi iaculis laoreet turpis, ac suscipit magna molestie id. Maecenas interdum tincidunt nunc, ac vehicula nulla rhoncus eget. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent nulla ante, condimentum ut orci eu, congue iaculis lectus. Sed nec neque rhoncus, tempus sem quis, facilisis urna. Curabitur vel ligula sapien. Sed at volutpat orci, at pretium mi. Integer consectetur malesuada purus, vel consequat est finibus at. Curabitur in venenatis libero, sed suscipit lorem.";
+                topic_table = "Heading1";
                 break;
             case 1:
                 text = "Phasellus molestie diam sed facilisis blandit. Nullam posuere sapien id neque laoreet iaculis. Aliquam erat volutpat. Nullam in orci rutrum, iaculis diam hendrerit, posuere odio. Maecenas quis massa nulla. Suspendisse convallis bibendum ligula, a luctus risus. Integer hendrerit, sapien id lobortis congue, sem elit pellentesque erat, ut tincidunt urna velit sit amet elit. Curabitur venenatis nisl purus, luctus dignissim magna ultricies at. Donec aliquam mollis massa, et sagittis augue consequat id. Integer nec tristique risus. Integer in interdum lacus. Duis placerat hendrerit eros, non volutpat purus imperdiet tincidunt. Duis auctor purus eu arcu blandit rutrum. Nam vestibulum convallis magna vel facilisis. Nulla condimentum hendrerit sapien vitae suscipit.";

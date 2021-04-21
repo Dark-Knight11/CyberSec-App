@@ -11,13 +11,6 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
         tools:ignore="AllowBackup">
-        <activity android:name=".Topic6" />
-        <activity android:name=".Topic_Network_Security" />
-        <activity android:name=".Topic_Application_Security" />
-        <activity android:name=".Topic_Cloud_Security" />
-        <activity android:name=".Topic_Data_Security" />
-        <activity android:name=".Topic_Linux_Essentials" />
-        <activity android:name=".Topic_WAPT_Security" />
         <activity
             android:name=".SplashScreen"
             android:theme="@style/SplashScreen">
@@ -30,11 +23,13 @@
         <activity
             android:name=".MainActivity"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
-        <activity android:name=".Topic1" />
-        <activity android:name=".Topic2" />
-        <activity android:name=".Topic3" />
-        <activity android:name=".Topic4" />
-        <activity android:name=".Topic5" />
+        <activity android:name=".Network_Security" />
+        <activity android:name=".Cloud_Security" />
+        <activity android:name=".Data_Security" />
+        <activity android:name=".Linux_Essentials" />
+        <activity android:name=".WAPT_Security" />
+        <activity android:name=".Application_Security" />
+        <activity android:name=".Topic_Common" />
     </application>
 
 </manifest>

@@ -7,16 +7,19 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Topic3 extends AppCompatActivity {
+public class Data_Security extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.astopic);
         Intent intent = getIntent();
 
-        int number = intent.getIntExtra(myAdapterInner.TOPIC,0);
+        int number = intent.getIntExtra("inTOPIC",0);
         String text = "", topic_table = "";
+
         ImageButton back = findViewById(R.id.backButton);
-        back.setOnClickListener(v -> startActivity(new Intent(Topic3.this, Topic_Data_Security.class)));
+        Intent in = new Intent(Data_Security.this, Topic_Common.class);
+        in.putExtra("TOPIC",2);
+        back.setOnClickListener(v -> startActivity(in));
 
         switch(number){
             case 0:

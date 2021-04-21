@@ -1,12 +1,13 @@
 package com.sies.cyber;
 
 public class DataModelInner {
-    String title, description, topic;
+    String title, description;
+    int topic_no;
 
-    public DataModelInner(String title, String description, String topic) {
+    public DataModelInner(String title, String description, int topic_no) {
         this.title = title;
         this.description = description;
-        this.topic = topic;
+        this.topic_no = topic_no;
     }
     public String getTitle() {
         return title;
@@ -24,11 +25,11 @@ public class DataModelInner {
         this.description = description;
     }
 
-    public String getTopic() {
-        return topic;
+    public int getTopic_no() {
+        return topic_no;
     }
 
-    public void setTopic(String topic) {
-        this.topic = topic;
+    public void setTopic_no(int topic_no) {
+        this.topic_no = topic_no;
     }
 }
