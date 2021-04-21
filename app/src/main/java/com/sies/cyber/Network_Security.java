@@ -31,6 +31,14 @@ public class Network_Security extends AppCompatActivity {
                         "In order to send and direct data across a network, computers need to be able to identify destinations and origins. This identification is an IP—Internet Protocol—address. An IP address is just a set of four numbers between 1 and 254, separated by dots. An example of an IP address is 173.194.43.7.";
                 topic_table = "What is IP?";
                 break;
+            case 1:
+                text = "Network ports are provided by the TCP or UDP protocols at the Transport layer. They are used by protocols in the upper layers of the OSI model. Port numbers are used to determine what protocol incoming traffic should be directed to. Ports allow a single host with a single IP address to run network services. Each port number identifies a distinct service, and each host can have 65535 ports per IP address. Port use is regulated by the Internet Corporation for Assigning Names and Numbers (ICANN). By ICANN there are three categories for ports:\n" +
+                        "\n" +
+                        "From 0 to 1023 – well known ports assigned to common protocols and services\n" +
+                        "From 1024 to 49151 – registered ports assigned by ICANN to a specific service\n" +
+                        "From 49152 to 65 535 – dynamic (private, high) ports range from 49,152 to 65,535. Can be used by any service on an ad hoc basis. Ports are assigned when a session is established, and released when the session ends.";
+                topic_table = "What are Ports?";
+                break;
             //Add More Cases
         }
 

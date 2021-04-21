@@ -4,9 +4,8 @@ public class DataModelInner {
     String title, description;
     int topic_no;
 
-    public DataModelInner(String title, String description, int topic_no) {
+    public DataModelInner(String title, int topic_no) {
         this.title = title;
-        this.description = description;
         this.topic_no = topic_no;
     }
     public String getTitle() {
@@ -17,13 +16,13 @@ public class DataModelInner {
         this.title = title;
     }
 
-    public String getDescription() {
-        return description;
-    }
+//    public String getDescription() {
+//        return description;
+//    }
 
-    public void setDescription(String description) {
-        this.description = description;
-    }
+//    public void setDescription(String description) {
+//        this.description = description;
+//    }
 
     public int getTopic_no() {
         return topic_no;

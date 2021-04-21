@@ -28,7 +28,6 @@ public class myAdapterInner extends RecyclerView.Adapter<myAdapterInner.myViewHo
     @Override
     public void onBindViewHolder(@NonNull myViewHolder holder, int position) {
         holder.title.setText(dataHolder.get(position).getTitle());
-        holder.description.setText(dataHolder.get(position).getDescription());
         holder.topic_no = dataHolder.get(position).getTopic_no();
     }
 
@@ -45,7 +44,6 @@ public class myAdapterInner extends RecyclerView.Adapter<myAdapterInner.myViewHo
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
             title = itemView.findViewById(R.id.activity_topic_title);
-            description = itemView.findViewById(R.id.activity_topic_description);
             itemView.setOnClickListener(this::onClick);
         }
 
