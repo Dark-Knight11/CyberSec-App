@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import java.util.ArrayList;
 
 public class myAdapterInner extends RecyclerView.Adapter<myAdapterInner.myViewHolder>{
-
+    public static final String TOPIC = "com.sies.cyber.TOPIC";
     ArrayList<DataModelInner> dataHolder;
 
     public myAdapterInner(ArrayList<DataModelInner> dataHolder) {
@@ -55,100 +55,31 @@ public class myAdapterInner extends RecyclerView.Adapter<myAdapterInner.myViewHo
         }
 
         private void onClick(View view) {
+            int number = getAdapterPosition();
             if(topic.equals("Application Security")) {  //don't use switch
-                switch (getAdapterPosition()) {
-                    case 0:
-                        view.getContext().startActivity(new Intent(view.getContext(), ASTopic1.class));
-                        break;
-                    case 1:
-                        view.getContext().startActivity(new Intent(view.getContext(), ASTopic1.class));
-                        break;
-                    case 2:
-                        view.getContext().startActivity(new Intent(view.getContext(), ASTopic1.class));
-                        break;
-                    case 3:
-                        view.getContext().startActivity(new Intent(view.getContext(), ASTopic1.class));
-                        break;
-                    case 4:
-                        view.getContext().startActivity(new Intent(view.getContext(), ASTopic1.class));
-                        break;
-                }
+                Intent intent = new Intent(view.getContext(), Topic1.class);
+                intent.putExtra(TOPIC,number);
+                view.getContext().startActivity(intent);
             }
             else if(topic.equals("Cloud Security")) {
-                switch (getAdapterPosition()) {
-                    case 0:
-                        view.getContext().startActivity(new Intent(view.getContext(), ASTopic1.class));
-                        break;
-                    case 1:
-                        view.getContext().startActivity(new Intent(view.getContext(), ASTopic1.class));
-                        break;
-                    case 2:
-                        view.getContext().startActivity(new Intent(view.getContext(), ASTopic1.class));
-                        break;
-                    case 3:
-                        view.getContext().startActivity(new Intent(view.getContext(), ASTopic1.class));
-                        break;
-                    case 4:
-                        view.getContext().startActivity(new Intent(view.getContext(), ASTopic1.class));
-                        break;
-                }
+                Intent intent = new Intent(view.getContext(), Topic2.class);
+                intent.putExtra(TOPIC,number);
+                view.getContext().startActivity(intent);
             }
             else if(topic.equals("Data Security")) {
-                switch (getAdapterPosition()) {
-                    case 0:
-                        view.getContext().startActivity(new Intent(view.getContext(), ASTopic1.class));
-                        break;
-                    case 1:
-                        view.getContext().startActivity(new Intent(view.getContext(), ASTopic1.class));
-                        break;
-                    case 2:
-                        view.getContext().startActivity(new Intent(view.getContext(), ASTopic1.class));
-                        break;
-                    case 3:
-                        view.getContext().startActivity(new Intent(view.getContext(), ASTopic1.class));
-                        break;
-                    case 4:
-                        view.getContext().startActivity(new Intent(view.getContext(), ASTopic1.class));
-                        break;
-                }
+                Intent intent = new Intent(view.getContext(), Topic3.class);
+                intent.putExtra(TOPIC,number);
+                view.getContext().startActivity(intent);
             }
             else if(topic.equals("Linux Essentials")) {
-                switch (getAdapterPosition()) {
-                    case 0:
-                        view.getContext().startActivity(new Intent(view.getContext(), ASTopic1.class));
-                        break;
-                    case 1:
-                        view.getContext().startActivity(new Intent(view.getContext(), ASTopic1.class));
-                        break;
-                    case 2:
-                        view.getContext().startActivity(new Intent(view.getContext(), ASTopic1.class));
-                        break;
-                    case 3:
-                        view.getContext().startActivity(new Intent(view.getContext(), ASTopic1.class));
-                        break;
-                    case 4:
-                        view.getContext().startActivity(new Intent(view.getContext(), ASTopic1.class));
-                        break;
-                }
+                Intent intent = new Intent(view.getContext(), Topic4.class);
+                intent.putExtra(TOPIC,number);
+                view.getContext().startActivity(intent);
             }
             else if(topic.equals("Web App Pen-Testing")) {
-                switch (getAdapterPosition()) {
-                    case 0:
-                        view.getContext().startActivity(new Intent(view.getContext(), ASTopic1.class));
-                        break;
-                    case 1:
-                        view.getContext().startActivity(new Intent(view.getContext(), ASTopic1.class));
-                        break;
-                    case 2:
-                        view.getContext().startActivity(new Intent(view.getContext(), ASTopic1.class));
-                        break;
-                    case 3:
-                        view.getContext().startActivity(new Intent(view.getContext(), ASTopic1.class));
-                        break;
-                    case 4:
-                        view.getContext().startActivity(new Intent(view.getContext(), ASTopic1.class));
-                        break;
-                }
+                Intent intent = new Intent(view.getContext(), Topic5.class);
+                intent.putExtra(TOPIC,number);
+                view.getContext().startActivity(intent);
             }
             else if(topic.equals("Network Security")) {
                 switch (getAdapterPosition()) {

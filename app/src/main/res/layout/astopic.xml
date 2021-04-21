@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".Topic_Application_Security">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/app_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        tools:ignore="MissingConstraints" >
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/topAppBar"
+            android:background="#191859"
+            android:layout_width="match_parent"
+            android:layout_height="?android:actionBarSize"
+            app:menu="@menu/top_app_bar"
+            app:navigationIconTint="@color/white"
+            app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
+            tools:ignore="MissingConstraints" />
+    </com.google.android.material.appbar.AppBarLayout>
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@id/app_bar"
+        android:layout_marginTop="35dp"
+        android:overScrollMode="never">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:id="@+id/topic_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/application_security"
+                android:textColor="#ffffff"
+                android:textSize="30sp"
+                android:gravity="center"
+                android:layout_marginTop="30dp"
+                android:layout_alignParentTop="true"/>
+            <TextView
+                android:id="@+id/topic_content"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Content"
+                android:textColor="#ffffff"
+                android:textSize="20sp"
+                android:padding="20dp"
+                android:layout_marginTop="30dp"
+                android:layout_below="@id/topic_title"/>
+        </RelativeLayout>
+    </ScrollView>
+
+
+
+
+
+</RelativeLayout>
+

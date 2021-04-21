@@ -29,7 +29,12 @@
         <activity
             android:name=".MainActivity"
             android:theme="@style/Theme.MaterialComponents.Light.NoActionBar" />
-        <activity android:name=".ASTopic1" />
+        <activity android:name=".Topic1" />
+        <activity android:name=".Topic2" />
+        <activity android:name=".Topic3" />
+        <activity android:name=".Topic4" />
+        <activity android:name=".Topic5" />
+
     </application>
 
 </manifest>
