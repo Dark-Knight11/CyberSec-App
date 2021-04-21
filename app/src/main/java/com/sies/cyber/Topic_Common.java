@@ -34,7 +34,7 @@ public class Topic_Common extends AppCompatActivity {
         back.setOnClickListener(v -> startActivity(new Intent(Topic_Common.this, MainActivity.class)));
 
 
-        DataModelInner ob1, ob2, ob3, ob4, ob5;
+        DataModelInner ob1, ob2, ob3, ob4, ob5, ob6;
 
         switch(number){
             case 0:
@@ -84,6 +84,7 @@ public class Topic_Common extends AppCompatActivity {
                 ob3 = new DataModelInner("Heading3",number);
                 ob4 = new DataModelInner("Heading4",number);
                 ob5 = new DataModelInner("Heading5",number);
+                ob6 = new DataModelInner("Heading6",number);
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + number);

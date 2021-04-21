@@ -1,7 +1,7 @@
 package com.sies.cyber;
 
 public class DataModelInner {
-    String title, description;
+    String title;
     int topic_no;
 
     public DataModelInner(String title, int topic_no) {
