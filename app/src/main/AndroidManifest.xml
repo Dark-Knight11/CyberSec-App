@@ -3,6 +3,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     package="com.sies.cyber">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:icon="@drawable/logo_icon"
@@ -30,6 +32,9 @@
         <activity android:name=".WAPT_Security" />
         <activity android:name=".Application_Security" />
         <activity android:name=".Topic_Common" />
+        <activity android:name=".SignUp" />
+        <activity android:name=".Sign_In" />
+        <activity android:name=".ForgotPassword" />
     </application>
 
 </manifest>
