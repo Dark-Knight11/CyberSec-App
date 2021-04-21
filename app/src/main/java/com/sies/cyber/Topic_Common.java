@@ -34,7 +34,7 @@ public class Topic_Common extends AppCompatActivity {
         back.setOnClickListener(v -> startActivity(new Intent(Topic_Common.this, MainActivity.class)));
 
 
-        DataModelInner ob1, ob2, ob3, ob4, ob5, ob6;
+        DataModelInner ob1, ob2, ob3, ob4, ob5, ob6, ob7;
 
         switch(number){
             case 0:
@@ -44,6 +44,11 @@ public class Topic_Common extends AppCompatActivity {
                 ob3 = new DataModelInner("Heading3",number);
                 ob4 = new DataModelInner("Heading4",number);
                 ob5 = new DataModelInner("Heading5",number);
+                dataHolder.add(ob1);
+                dataHolder.add(ob2);
+                dataHolder.add(ob3);
+                dataHolder.add(ob4);
+                dataHolder.add(ob5);
                 break;
             case 1:
                 t.setText("Cloud Security");
@@ -52,6 +57,11 @@ public class Topic_Common extends AppCompatActivity {
                 ob3 = new DataModelInner("Heading3",number);
                 ob4 = new DataModelInner("Heading4",number);
                 ob5 = new DataModelInner("Heading5",number);
+                dataHolder.add(ob1);
+                dataHolder.add(ob2);
+                dataHolder.add(ob3);
+                dataHolder.add(ob4);
+                dataHolder.add(ob5);
                 break;
             case 2:
                 t.setText("Data Security");
@@ -60,6 +70,11 @@ public class Topic_Common extends AppCompatActivity {
                 ob3 = new DataModelInner("Heading3",number);
                 ob4 = new DataModelInner("Heading4",number);
                 ob5 = new DataModelInner("Heading5",number);
+                dataHolder.add(ob1);
+                dataHolder.add(ob2);
+                dataHolder.add(ob3);
+                dataHolder.add(ob4);
+                dataHolder.add(ob5);
                 break;
             case 3:
                 t.setText("Linux Essentials");
@@ -68,6 +83,11 @@ public class Topic_Common extends AppCompatActivity {
                 ob3 = new DataModelInner("Heading3",number);
                 ob4 = new DataModelInner("Heading4",number);
                 ob5 = new DataModelInner("Heading5",number);
+                dataHolder.add(ob1);
+                dataHolder.add(ob2);
+                dataHolder.add(ob3);
+                dataHolder.add(ob4);
+                dataHolder.add(ob5);
                 break;
             case 4:
                 t.setText("Web App Pen-Testing");
@@ -76,6 +96,11 @@ public class Topic_Common extends AppCompatActivity {
                 ob3 = new DataModelInner("Heading3",number);
                 ob4 = new DataModelInner("Heading4",number);
                 ob5 = new DataModelInner("Heading5",number);
+                dataHolder.add(ob1);
+                dataHolder.add(ob2);
+                dataHolder.add(ob3);
+                dataHolder.add(ob4);
+                dataHolder.add(ob5);
                 break;
             case 5:
                 t.setText("Application Security");
@@ -85,15 +110,18 @@ public class Topic_Common extends AppCompatActivity {
                 ob4 = new DataModelInner("Heading4",number);
                 ob5 = new DataModelInner("Heading5",number);
                 ob6 = new DataModelInner("Heading6",number);
+                ob7 = new DataModelInner("Heading7",number);
+                dataHolder.add(ob1);
+                dataHolder.add(ob2);
+                dataHolder.add(ob3);
+                dataHolder.add(ob4);
+                dataHolder.add(ob5);
+                dataHolder.add(ob6);
+                dataHolder.add(ob7);
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + number);
         }
-        dataHolder.add(ob1);
-        dataHolder.add(ob2);
-        dataHolder.add(ob3);
-        dataHolder.add(ob4);
-        dataHolder.add(ob5);
         mRecyclerView.setAdapter(new myAdapterInner(dataHolder));
     }
 }
