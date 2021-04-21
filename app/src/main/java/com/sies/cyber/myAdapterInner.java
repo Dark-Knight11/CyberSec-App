@@ -38,7 +38,7 @@ public class myAdapterInner extends RecyclerView.Adapter<myAdapterInner.myViewHo
         return dataHolder.size();
     }
 
-    static class myViewHolder extends RecyclerView.ViewHolder {
+    class myViewHolder extends RecyclerView.ViewHolder {
 
         TextView title;
         TextView description;
@@ -56,7 +56,7 @@ public class myAdapterInner extends RecyclerView.Adapter<myAdapterInner.myViewHo
 
         private void onClick(View view) {
             int number = getAdapterPosition();
-            if(topic.equals("Application Security")) {  //don't use switch
+            if(topic.equals("Network Security")) {  //don't use switch
                 Intent intent = new Intent(view.getContext(), Topic1.class);
                 intent.putExtra(TOPIC,number);
                 view.getContext().startActivity(intent);
@@ -81,24 +81,10 @@ public class myAdapterInner extends RecyclerView.Adapter<myAdapterInner.myViewHo
                 intent.putExtra(TOPIC,number);
                 view.getContext().startActivity(intent);
             }
-            else if(topic.equals("Network Security")) {
-                switch (getAdapterPosition()) {
-                    case 0:
-                        view.getContext().startActivity(new Intent(view.getContext(), ASTopic1.class));
-                        break;
-                    case 1:
-                        view.getContext().startActivity(new Intent(view.getContext(), ASTopic1.class));
-                        break;
-                    case 2:
-                        view.getContext().startActivity(new Intent(view.getContext(), ASTopic1.class));
-                        break;
-                    case 3:
-                        view.getContext().startActivity(new Intent(view.getContext(), ASTopic1.class));
-                        break;
-                    case 4:
-                        view.getContext().startActivity(new Intent(view.getContext(), ASTopic1.class));
-                        break;
-                }
+            else if(topic.equals("Application Security")) {
+                Intent intent = new Intent(view.getContext(), Topic6.class);
+                intent.putExtra(TOPIC,number);
+                view.getContext().startActivity(intent);
             }
         }
     }

@@ -11,17 +11,20 @@
         android:id="@+id/app_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
         tools:ignore="MissingConstraints" >
         <com.google.android.material.appbar.MaterialToolbar
-            android:id="@+id/topAppBar"
-            android:background="#191859"
             android:layout_width="match_parent"
             android:layout_height="?android:actionBarSize"
-            app:menu="@menu/top_app_bar"
-            app:navigationIconTint="@color/white"
-            app:navigationIcon="@drawable/ic_baseline_arrow_back_24"
-            tools:ignore="MissingConstraints" />
+            android:background="#191859"
+            app:menu="@menu/top_app_bar" >
+            <ImageButton
+                android:id="@+id/backButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#191859"
+                android:src="@drawable/ic_baseline_arrow_back_24"
+                tools:ignore="ContentDescription,MissingConstraints,UnusedAttribute" />
+        </com.google.android.material.appbar.MaterialToolbar>
     </com.google.android.material.appbar.AppBarLayout>
     <ScrollView
         android:layout_width="match_parent"
@@ -51,7 +54,8 @@
                 android:textSize="20sp"
                 android:padding="20dp"
                 android:layout_marginTop="30dp"
-                android:layout_below="@id/topic_title"/>
+                android:layout_below="@id/topic_title"
+                tools:ignore="HardcodedText" />
         </RelativeLayout>
     </ScrollView>
 

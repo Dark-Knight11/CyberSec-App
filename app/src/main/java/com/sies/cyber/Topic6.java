@@ -7,7 +7,7 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Topic2 extends AppCompatActivity {
+public class Topic6 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.astopic);
@@ -16,7 +16,7 @@ public class Topic2 extends AppCompatActivity {
         int number = intent.getIntExtra(myAdapterInner.TOPIC,0);
         String text = "", topic_table = "";
         ImageButton back = findViewById(R.id.backButton);
-        back.setOnClickListener(v -> startActivity(new Intent(Topic2.this, Topic_Cloud_Security.class)));
+        back.setOnClickListener(v -> startActivity(new Intent(Topic6.this, Topic_Application_Security.class)));
 
         switch(number){
             case 0:

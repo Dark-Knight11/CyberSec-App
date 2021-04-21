@@ -2,6 +2,7 @@ package com.sies.cyber;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +15,9 @@ public class Topic5 extends AppCompatActivity {
 
         int number = intent.getIntExtra(myAdapterInner.TOPIC,0);
         String text = "", topic_table = "";
+
+        ImageButton back = findViewById(R.id.backButton);
+        back.setOnClickListener(v -> startActivity(new Intent(Topic5.this, Topic_WAPT_Security.class)));
 
         switch(number){
             case 0:
