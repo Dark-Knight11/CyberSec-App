@@ -3,7 +3,9 @@ package com.sies.cyber;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -15,7 +17,7 @@ import java.util.ArrayList;
 public class Topic_Common extends AppCompatActivity {
     RecyclerView mRecyclerView;
     ArrayList<DataModelInner> dataHolder;
-
+    ImageView lock;
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +35,8 @@ public class Topic_Common extends AppCompatActivity {
         ImageButton back = findViewById(R.id.backButton);
         back.setOnClickListener(v -> startActivity(new Intent(Topic_Common.this, MainActivity.class)));
 
+        lock = findViewById(R.id.lock);
+        //lock.setVisibility(View.INVISIBLE);
 
         DataModelInner ob1, ob2, ob3, ob4, ob5, ob6, ob7;
 

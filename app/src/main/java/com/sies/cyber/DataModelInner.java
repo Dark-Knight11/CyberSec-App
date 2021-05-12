@@ -3,6 +3,15 @@ package com.sies.cyber;
 public class DataModelInner {
     String title;
     int topic_no;
+    int score;
+
+    public int getScore() {
+        return score;
+    }
+
+    public void setScore(int score) {
+        this.score = score;
+    }
 
     public DataModelInner(String title, int topic_no) {
         this.title = title;

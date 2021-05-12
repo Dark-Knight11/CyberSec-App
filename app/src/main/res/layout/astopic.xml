@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/black"
-    tools:context=".Topic_Application_Security">
+    tools:context=".Topic_Application_Security"
+    android:animateLayoutChanges="true">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/app_bar"
@@ -56,6 +57,121 @@
                 android:layout_marginTop="30dp"
                 android:layout_below="@id/topic_title"
                 tools:ignore="HardcodedText" />
+
+
+
+                <RelativeLayout
+                    android:id="@+id/questButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/my_border_yellow"
+                    android:padding="16dp"
+                    android:layout_margin="10dp"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:layout_below="@id/topic_content">
+
+                    <TextView
+                    android:id="@+id/questionnaire"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="QUESTIONNAIRE"
+                    android:layout_marginStart="4dp"
+                    android:textColor="@color/white"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:gravity="center_vertical"
+                    tools:ignore="HardcodedText" />
+                    <TextView
+                        android:id="@+id/current_points"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="--/10"
+                        android:textColor="#FFDD00"
+                        android:textSize="20sp"
+                        android:textStyle="bold"
+                        android:layout_margin="5dp"
+                        android:layout_alignParentEnd="true"
+                        android:layout_alignParentTop="true"
+                        android:freezesText="true"
+                        tools:ignore="HardcodedText" />
+                    <RelativeLayout
+                        android:id="@+id/qAndA"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_below="@id/questionnaire"
+                        android:visibility="gone">
+                        <View
+                            android:id="@+id/divider"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@android:color/darker_gray"
+                            android:layout_alignParentTop="true"/>
+                        <TextView
+                            android:id="@+id/question"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="1. This is a Sample Question?"
+                            android:textColor="#FFFFFF"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:layout_marginTop="15dp"
+                            android:layout_below="@id/divider"
+                            tools:ignore="HardcodedText" />
+
+                        <RadioGroup
+                            android:id="@+id/radioGroup"
+                            android:layout_marginTop="10dp"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/question"
+                            android:orientation="vertical">
+
+                            <RadioButton
+                                android:id="@+id/radioButton1"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Radio Button 1 "
+                                android:textColor="@color/white"
+                                android:textSize="18sp"/>
+
+                            <RadioButton
+                                android:id="@+id/radioButton2"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Radio Button 2"
+                                android:textColor="@color/white"
+                                android:textSize="18sp"/>
+
+                            <RadioButton
+                                android:id="@+id/radioButton3"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Radio Button 3"
+                                android:textColor="@color/white"
+                                android:textSize="18sp"/>
+
+                            <RadioButton
+                                android:id="@+id/radioButton4"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:text="Radio Button 4"
+                                android:textSize="18sp"/>
+                        </RadioGroup>
+                        <Button
+                            android:id="@+id/evaluate"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:text="EVALUATE"
+                            android:layout_below="@id/radioGroup"
+                            android:layout_marginTop="20dp"
+                            android:layout_centerInParent="true"/>
+                    </RelativeLayout>
+                </RelativeLayout>
         </RelativeLayout>
     </ScrollView>
 

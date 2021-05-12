@@ -2,12 +2,23 @@ package com.sies.cyber;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.RadioGroup;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 public class Network_Security extends AppCompatActivity {
+
+    int count = 0, points;
+    RelativeLayout questionnaire,question;
+    Button evalButton;
+    RadioGroup question1;
+    TextView curPoints;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.astopic);
@@ -17,10 +28,17 @@ public class Network_Security extends AppCompatActivity {
         String text = "", topic_table = "";
 
         ImageButton back = findViewById(R.id.backButton);
-
         Intent in = new Intent(Network_Security.this, Topic_Common.class);
         in.putExtra("TOPIC",0);
         back.setOnClickListener(v -> startActivity(in));
+
+        questionnaire = findViewById(R.id.questButton);
+        questionnaire.setOnClickListener(this::onClick);
+
+        evalButton = findViewById(R.id.evaluate);
+        evalButton.setOnClickListener(this::onClick);
+
+        curPoints = findViewById(R.id.current_points);
 
         switch(number){
             case 0:
@@ -46,5 +64,30 @@ public class Network_Security extends AppCompatActivity {
         TextView title = findViewById(R.id.topic_title);
         title.setText(topic_table);
         content.setText(text);
+    }
+
+    private void onClick(View view) {
+        if (view == questionnaire)
+        {
+            question = findViewById(R.id.qAndA);
+            if (count%2==0)
+                question.setVisibility(View.VISIBLE);
+            else
+                question.setVisibility(View.GONE);
+
+            count++;
+        }
+        else if (view == evalButton)
+        {
+            points = 0;
+            question1 = findViewById(R.id.radioGroup);
+            if(question1.getCheckedRadioButtonId() == R.id.radioButton1)
+            {
+                points += 2;
+            }
+
+            curPoints.setText(""+points+"/10");
+        }
+
     }
 }

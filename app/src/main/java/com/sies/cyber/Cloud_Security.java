@@ -3,6 +3,7 @@ package com.sies.cyber;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageButton;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,6 +21,8 @@ public class Cloud_Security extends AppCompatActivity {
         Intent in = new Intent(Cloud_Security.this, Topic_Common.class);
         in.putExtra("TOPIC",1);
         back.setOnClickListener(v -> startActivity(in));
+
+
 
         switch(number){
             case 0:
