@@ -8,7 +8,6 @@ import android.widget.ImageButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -46,7 +45,10 @@ public class Network_Security extends AppCompatActivity {
                         "\n" +
                         "A client is a different computer, such as your laptop or cell phone, that requests to view, download, or use the content. The client can connect over a network to exchange information. For instance, when you request Google’s search page with your web browser, your computer is the client.\n" +
                         "\n" +
-                        "In order to send and direct data across a network, computers need to be able to identify destinations and origins. This identification is an IP—Internet Protocol—address. An IP address is just a set of four numbers between 1 and 254, separated by dots. An example of an IP address is 173.194.43.7.";
+                        "In order to send and direct data across a network, computers need to be able to identify destinations and origins. This identification is an IP—Internet Protocol—address. An IP address is just a set of four numbers between 1 and 254, separated by dots. An example of an IP address is 173.194.43.7.\n" +
+                        "\n" +
+                        getString(R.string.hyperlink);
+s
                 topic_table = "What is IP?";
                 break;
             case 1:
@@ -57,6 +59,17 @@ public class Network_Security extends AppCompatActivity {
                         "From 49152 to 65 535 – dynamic (private, high) ports range from 49,152 to 65,535. Can be used by any service on an ad hoc basis. Ports are assigned when a session is established, and released when the session ends.";
                 topic_table = "What are Ports?";
                 break;
+            case 2:
+                text = "The use of IP addresses typically happens behind the scenes. The process works like this:\n" +
+                        "\n" +
+                        "Your device indirectly connects to the internet by connecting at first to a network connected to the internet, which then grants your device access to the internet.\n" +
+                        "When you are at home, that network will probably be your Internet Service Provider (ISP). At work, it will be your company network.\n" +
+                        "Your IP address is assigned to your device by your ISP.\n" +
+                        "Your internet activity goes through the ISP, and they route it back to you, using your IP address. Since they are giving you access to the internet, it is their role to assign an IP address to your device.\n" +
+                        "However, your IP address can change. For example, turning your modem or router on or off can change it. Or you can contact your ISP, and they can change it for you.\n" +
+                        "When you are out and about – for example, traveling – and you take your device with you, your home IP address does not come with you. This is because you will be using another network (Wi-Fi at a hotel, airport, or coffee shop, etc.) to access the internet and will be using a different (and temporary) IP address, assigned to you by the ISP of the hotel, airport or coffee shop.\n";
+
+                topic_table = "How do IP addresses work";
             //Add More Cases
         }
 

@@ -3,7 +3,6 @@ package com.sies.cyber;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ImageButton;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -26,16 +25,26 @@ public class Cloud_Security extends AppCompatActivity {
 
         switch(number){
             case 0:
-                text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus et purus a orci interdum eleifend. Morbi iaculis laoreet turpis, ac suscipit magna molestie id. Maecenas interdum tincidunt nunc, ac vehicula nulla rhoncus eget. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Praesent nulla ante, condimentum ut orci eu, congue iaculis lectus. Sed nec neque rhoncus, tempus sem quis, facilisis urna. Curabitur vel ligula sapien. Sed at volutpat orci, at pretium mi. Integer consectetur malesuada purus, vel consequat est finibus at. Curabitur in venenatis libero, sed suscipit lorem.";
-                topic_table = "Heading1";
+                text = "Cloud is a service offered on the internet for public consumption either for a fee or free. It comes in different forms (IaaS, PaaS, SaaS), shapes (infrastructure, container based, abstracted) and sizes (public, private or hybrid).";
+                topic_table = "What is Cloud?";
                 break;
             case 1:
-                text = "Phasellus molestie diam sed facilisis blandit. Nullam posuere sapien id neque laoreet iaculis. Aliquam erat volutpat. Nullam in orci rutrum, iaculis diam hendrerit, posuere odio. Maecenas quis massa nulla. Suspendisse convallis bibendum ligula, a luctus risus. Integer hendrerit, sapien id lobortis congue, sem elit pellentesque erat, ut tincidunt urna velit sit amet elit. Curabitur venenatis nisl purus, luctus dignissim magna ultricies at. Donec aliquam mollis massa, et sagittis augue consequat id. Integer nec tristique risus. Integer in interdum lacus. Duis placerat hendrerit eros, non volutpat purus imperdiet tincidunt. Duis auctor purus eu arcu blandit rutrum. Nam vestibulum convallis magna vel facilisis. Nulla condimentum hendrerit sapien vitae suscipit.";
-                topic_table = "Heading2";
+                text = "Cloud security is the whole bundle of technology, protocols, and best practices that protect cloud computing environments, applications running in the cloud, and data held in the cloud. Securing cloud services begins with understanding what exactly is being secured, as well as, the system aspects that must be managed.\n" +
+                        "\n" +
+                        "As an overview, backend development against security vulnerabilities is largely within the hands of cloud service providers. Aside from choosing a security-conscious provider, clients must focus mostly on proper service configuration and safe use habits. Additionally, clients should be sure that any end-user hardware and networks are properly secured.\n";
+                topic_table = "What is Cloud Security?";
                 break;
             case 2:
-                text = "Nullam bibendum feugiat enim tincidunt sodales. Aliquam ut quam id est ultrices tincidunt non in sapien. Curabitur lacus ex, bibendum consectetur dolor quis, blandit gravida lorem. Nunc id nisl sit amet lectus sodales mattis quis in nisl. Praesent eget neque dui. Suspendisse nisl sem, bibendum vitae accumsan id, blandit non arcu. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Sed a dui placerat, dapibus mauris nec, sollicitudin lorem. Nulla laoreet dui porta nibh convallis tincidunt. Aliquam erat volutpat. Aenean ac scelerisque tellus. Etiam molestie, ex quis consequat auctor, nunc enim egestas enim, nec bibendum augue mauris auctor lorem. Etiam faucibus molestie lacinia. Duis in risus risus.";
-                topic_table = "Heading3";
+                text = "Every cloud security measure works to accomplish one or more of the following:\n" +
+                        "\n" +
+                        "1. Enable data recovery in case of data loss\n" +
+                        "\n" +
+                        "2. Protect storage and networks against malicious data theft\n" +
+                        "\n" +
+                        "3. Deter human error or negligence that causes data leaks\n" +
+                        "\n" +
+                        "4. Reduce the impact of any data or system compromise\n";
+                topic_table = "How does It work?";
                 break;
             case 3:
                 text = "Duis ultrices malesuada mi, non suscipit dolor aliquet ut. Ut volutpat elit ligula, facilisis pellentesque metus cursus at. Fusce ut ultricies magna. Etiam pharetra urna enim, eu eleifend tortor sollicitudin ut. Maecenas quis fermentum eros. Curabitur rutrum malesuada neque, id ullamcorper urna lobortis ac. Nullam sed interdum purus, at tempor mi. Aenean tempus nulla a arcu lobortis gravida.";

@@ -30,4 +30,5 @@
     <string name="already_registered">Already Registered?</string>
     <string name="sign_in">Sign In</string>
     <string name="forgot_password_btn">forgot_password_btn</string>
+    <string name="hyperlink"><a href="https://www.kaspersky.com/resource-center/definitions/what-is-an-ip-address">IP</a></string>
 </resources>
