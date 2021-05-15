@@ -27,6 +27,7 @@ public class Network_Security extends AppCompatActivity {
     TextView curPoints;
     SharedPreferences sharedPref;
     SharedPreferences.Editor editor;
+    String wrong = "";
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -167,21 +168,32 @@ public class Network_Security extends AppCompatActivity {
                         editor.putInt(SCORE_NS1, points);
                         editor.commit();
                     }
-                    if(question2.getCheckedRadioButtonId() == R.id.radioButton5)
+                    else wrong += "1, ";
+                    if(question2.getCheckedRadioButtonId() == R.id.radioButton7)
                     {
                         points += 5;
                         editor.putInt(SCORE_NS1, points);
                         editor.commit();
                     }
-                    if(question3.getCheckedRadioButtonId() == R.id.radioButton9)
+                    else wrong += "2, ";
+                    if(question3.getCheckedRadioButtonId() == R.id.radioButton11)
                     {
                         points += 5;
                         editor.putInt(SCORE_NS1, points);
                         editor.commit();
                     }
+                    else wrong += "3";
                     editor.putInt(SCORE_NS1, points);
                     editor.commit();
                     curPoints.setText(""+points+"/15");
+                    if(wrong.length()==0)
+                        Toast.makeText(view.getContext(),"You have got Everything Correct!!",Toast.LENGTH_SHORT).show();
+                    else
+                        Toast.makeText(view.getContext(),"You have got Q: "+wrong+" Incorrect.",Toast.LENGTH_SHORT).show();
+
+                    if(points>=10)
+                        Toast.makeText(view.getContext(),"You scored "+ points + " points and unlocked the next Topic!!",Toast.LENGTH_SHORT).show();
+                    wrong = "";
                     break;
                 case 1:
                     points = 0;
@@ -196,21 +208,32 @@ public class Network_Security extends AppCompatActivity {
                         editor.putInt(SCORE_NS2, points);
                         editor.commit();
                     }
+                    else wrong += "1, ";
                     if(question5.getCheckedRadioButtonId() == R.id.radioButton17)
                     {
                         points += 5;
                         editor.putInt(SCORE_NS2, points);
                         editor.commit();
                     }
+                    else wrong += "2, ";
                     if(question6.getCheckedRadioButtonId() == R.id.radioButton21)
                     {
                         points += 5;
                         editor.putInt(SCORE_NS2, points);
                         editor.commit();
                     }
+                    else wrong += "3";
                     editor.putInt(SCORE_NS2, points);
                     editor.commit();
                     curPoints.setText(""+points+"/15");
+                    if(wrong.length()==0)
+                        Toast.makeText(view.getContext(),"You have got Everything Correct!!",Toast.LENGTH_SHORT).show();
+                    else
+                        Toast.makeText(view.getContext(),"You have got Q: "+wrong+" Incorrect.",Toast.LENGTH_SHORT).show();
+
+                    if(points>=10)
+                        Toast.makeText(view.getContext(),"You scored "+ points + " points and unlocked the next Topic!!",Toast.LENGTH_SHORT).show();
+                    wrong = "";
                     break;
             }
 

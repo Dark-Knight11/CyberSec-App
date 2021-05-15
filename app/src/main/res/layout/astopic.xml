@@ -114,7 +114,7 @@
                             android:id="@+id/question1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="1. This is a Sample Question?"
+                            android:text="1. Which of these are well known ports?"
                             android:textColor="#FFFFFF"
                             android:textSize="20sp"
                             android:textStyle="bold"
@@ -134,7 +134,7 @@
                                 android:id="@+id/radioButton1"
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Radio Button 1 "
+                                android:text="1200"
                                 android:textColor="@color/white"
                                 android:textSize="18sp"/>
 
@@ -142,7 +142,7 @@
                                 android:id="@+id/radioButton2"
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Radio Button 2"
+                                android:text="40203"
                                 android:textColor="@color/white"
                                 android:textSize="18sp"/>
 
@@ -150,7 +150,7 @@
                                 android:id="@+id/radioButton3"
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Radio Button 3"
+                                android:text="2023"
                                 android:textColor="@color/white"
                                 android:textSize="18sp"/>
 
@@ -159,7 +159,7 @@
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/white"
-                                android:text="Radio Button 4"
+                                android:text="49151"
                                 android:textSize="18sp"/>
                         </RadioGroup>
 
@@ -167,7 +167,7 @@
                             android:id="@+id/question2"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="2. This is a Sample Question2?"
+                            android:text="2. What is the Range of ports?"
                             android:textColor="#FFFFFF"
                             android:textSize="20sp"
                             android:textStyle="bold"
@@ -186,7 +186,7 @@
                                 android:id="@+id/radioButton5"
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Radio Button 5"
+                                android:text="99"
                                 android:textColor="@color/white"
                                 android:textSize="18sp"/>
 
@@ -194,7 +194,7 @@
                                 android:id="@+id/radioButton6"
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Radio Button 6"
+                                android:text="60000"
                                 android:textColor="@color/white"
                                 android:textSize="18sp"/>
 
@@ -202,7 +202,7 @@
                                 android:id="@+id/radioButton7"
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Radio Button 7"
+                                android:text="65535"
                                 android:textColor="@color/white"
                                 android:textSize="18sp"/>
 
@@ -211,14 +211,14 @@
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/white"
-                                android:text="Radio Button 8"
+                                android:text="69821"
                                 android:textSize="18sp"/>
                         </RadioGroup>
                         <TextView
                             android:id="@+id/question3"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:text="3. This is a Sample Question3?"
+                            android:text="3. How long is an IPv6 address?"
                             android:textColor="#FFFFFF"
                             android:textSize="20sp"
                             android:textStyle="bold"
@@ -237,7 +237,7 @@
                                 android:id="@+id/radioButton9"
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Radio Button 9"
+                                android:text="16 Hexadecimal numbers"
                                 android:textColor="@color/white"
                                 android:textSize="18sp"/>
 
@@ -245,7 +245,7 @@
                                 android:id="@+id/radioButton10"
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Radio Button 10"
+                                android:text="32 decimal numbers"
                                 android:textColor="@color/white"
                                 android:textSize="18sp"/>
 
@@ -253,7 +253,7 @@
                                 android:id="@+id/radioButton11"
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
-                                android:text="Radio Button 11"
+                                android:text="128 bits"
                                 android:textColor="@color/white"
                                 android:textSize="18sp"/>
 
@@ -262,7 +262,7 @@
                                 android:layout_width="fill_parent"
                                 android:layout_height="wrap_content"
                                 android:textColor="@color/white"
-                                android:text="Radio Button 12"
+                                android:text="32 bits"
                                 android:textSize="18sp"/>
                         </RadioGroup>
                         <Button
@@ -451,6 +451,134 @@
                             android:layout_marginTop="20dp"
                             android:layout_centerInParent="true"/>
                     </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/qAndANS3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_below="@id/questionnaire"
+                        android:visibility="gone">
+                        <View
+                            android:id="@+id/divider3"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@android:color/darker_gray"
+                            android:layout_alignParentTop="true"/>
+                        <TextView
+                            android:id="@+id/question7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="1. What is PAAS?"
+                            android:textColor="#FFFFFF"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:layout_marginTop="15dp"
+                            android:layout_below="@id/divider3"
+                            tools:ignore="HardcodedText" />
+
+                        <RadioGroup
+                            android:id="@+id/radioGroup7"
+                            android:layout_marginTop="10dp"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/question7"
+                            android:orientation="vertical">
+
+                            <RadioButton
+                                android:id="@+id/radioButton25"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Platform As A Service"
+                                android:textColor="@color/white"
+                                android:textSize="18sp"/>
+
+                            <RadioButton
+                                android:id="@+id/radioButton26"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Passport As A Service"
+                                android:textColor="@color/white"
+                                android:textSize="18sp"/>
+
+                            <RadioButton
+                                android:id="@+id/radioButton27"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Package As A Service"
+                                android:textColor="@color/white"
+                                android:textSize="18sp"/>
+
+                            <RadioButton
+                                android:id="@+id/radioButton28"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:text="Support Package"
+                                android:textSize="18sp"/>
+                        </RadioGroup>
+
+                        <TextView
+                            android:id="@+id/question8"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="2. What should be done to prevent data loss?"
+                            android:textColor="#FFFFFF"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:layout_marginTop="15dp"
+                            android:layout_below="@id/radioGroup7"
+                            tools:ignore="HardcodedText" />
+                        <RadioGroup
+                            android:id="@+id/radioGroup8"
+                            android:layout_marginTop="10dp"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/question8"
+                            android:orientation="vertical">
+
+                            <RadioButton
+                                android:id="@+id/radioButton29"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Data Backup"
+                                android:textColor="@color/white"
+                                android:textSize="18sp"/>
+
+                            <RadioButton
+                                android:id="@+id/radioButton30"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Security Review"
+                                android:textColor="@color/white"
+                                android:textSize="18sp"/>
+
+                            <RadioButton
+                                android:id="@+id/radioButton31"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Storing Data Offline"
+                                android:textColor="@color/white"
+                                android:textSize="18sp"/>
+
+                            <RadioButton
+                                android:id="@+id/radioButton32"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:text="Data Extraction"
+                                android:textSize="18sp"/>
+                        </RadioGroup>
+
+                        <Button
+                            android:id="@+id/evaluate3"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:text="EVALUATE"
+                            android:layout_below="@id/radioGroup8"
+                            android:layout_marginTop="20dp"
+                            android:layout_centerInParent="true"/>
+                    </RelativeLayout>
+
                 </RelativeLayout>
         </RelativeLayout>
     </ScrollView>

@@ -15,15 +15,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-import static android.content.Context.MODE_PRIVATE;
-import static com.sies.cyber.Network_Security.SHARED_PREFS;
-import static com.sies.cyber.Network_Security.SCORE_NS2;
-import static java.security.AccessController.getContext;
 
 public class myAdapterInner extends RecyclerView.Adapter<myAdapterInner.myViewHolder>{
     ArrayList<DataModelInner> dataHolder;
-    private Context context;
-    int pt=0;
+
     public myAdapterInner(ArrayList<DataModelInner> dataHolder) {
         this.dataHolder = dataHolder;
     }
@@ -76,7 +71,7 @@ public class myAdapterInner extends RecyclerView.Adapter<myAdapterInner.myViewHo
 
                     break;
                 case 1:
-                    if (score<10)
+                    if (score<5)
                         Toast.makeText(view.getContext(),"Insufficient Score!",Toast.LENGTH_SHORT).show();
 
                     else

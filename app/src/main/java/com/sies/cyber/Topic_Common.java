@@ -13,6 +13,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+import static com.sies.cyber.Cloud_Security.SCORE_CS1;
 import static com.sies.cyber.Network_Security.SCORE_NS1;
 import static com.sies.cyber.Network_Security.SCORE_NS2;
 import static com.sies.cyber.Network_Security.SHARED_PREFS;
@@ -68,8 +69,11 @@ public class Topic_Common extends AppCompatActivity {
                 break;
             case 1:
                 t.setText("Cloud Security");
-                ob1 = new DataModelInner("What is Cloud?",number,R.drawable.ic_lock_unlock,0);
-                ob2 = new DataModelInner("What is Cloud Security?",number,R.drawable.ic_lock,0);
+                ob1 = new DataModelInner("What is Cloud?",number,R.drawable.ic_lock_unlock,10);
+                points = sharedPref.getInt(SCORE_CS1,0);
+                if(points>= 5) image = R.drawable.ic_lock_unlock;
+                else image = R.drawable.ic_lock;
+                ob2 = new DataModelInner("What is Cloud Security?",number,image,points);
                 ob3 = new DataModelInner("How does it Work?",number,R.drawable.ic_lock,0);
                 ob4 = new DataModelInner("Cloud security risks",number,R.drawable.ic_lock,0);
                 ob5 = new DataModelInner("Types of Attacks",number,R.drawable.ic_lock,0);
