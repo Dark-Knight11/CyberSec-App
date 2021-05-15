@@ -1,19 +1,29 @@
 package com.sies.cyber;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+import static android.content.Context.MODE_PRIVATE;
+import static com.sies.cyber.Network_Security.SHARED_PREFS;
+import static com.sies.cyber.Network_Security.SCORE_NS2;
+import static java.security.AccessController.getContext;
+
 public class myAdapterInner extends RecyclerView.Adapter<myAdapterInner.myViewHolder>{
     ArrayList<DataModelInner> dataHolder;
-
+    private Context context;
+    int pt=0;
     public myAdapterInner(ArrayList<DataModelInner> dataHolder) {
         this.dataHolder = dataHolder;
     }
@@ -29,6 +39,8 @@ public class myAdapterInner extends RecyclerView.Adapter<myAdapterInner.myViewHo
     public void onBindViewHolder(@NonNull myViewHolder holder, int position) {
         holder.title.setText(dataHolder.get(position).getTitle());
         holder.topic_no = dataHolder.get(position).getTopic_no();
+        holder.image.setImageResource(dataHolder.get(position).getLock());
+        holder.score = dataHolder.get(position).getScore();
     }
 
     @Override
@@ -38,12 +50,13 @@ public class myAdapterInner extends RecyclerView.Adapter<myAdapterInner.myViewHo
 
     class myViewHolder extends RecyclerView.ViewHolder {
         TextView title;
-        TextView description;
         int topic_no;
-
+        ImageView image;
+        int score;
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
             title = itemView.findViewById(R.id.activity_topic_title);
+            image = itemView.findViewById(R.id.lock);
             itemView.setOnClickListener(this::onClick);
         }
 
@@ -51,28 +64,77 @@ public class myAdapterInner extends RecyclerView.Adapter<myAdapterInner.myViewHo
             Intent intent;
             switch(topic_no){
                 case 0:
-                    intent = new Intent(view.getContext(), Network_Security.class);
+                    if (score<10)
+                        Toast.makeText(view.getContext(),"Insufficient Score!",Toast.LENGTH_SHORT).show();
+
+                    else
+                    {
+                        intent = new Intent(view.getContext(), Network_Security.class);
+                        intent.putExtra("inTOPIC",getAdapterPosition());
+                        view.getContext().startActivity(intent);
+                    }
+
                     break;
                 case 1:
-                    intent = new Intent(view.getContext(), Cloud_Security.class);
+                    if (score<10)
+                        Toast.makeText(view.getContext(),"Insufficient Score!",Toast.LENGTH_SHORT).show();
+
+                    else
+                    {
+                        intent = new Intent(view.getContext(), Cloud_Security.class);
+                        intent.putExtra("inTOPIC",getAdapterPosition());
+                        view.getContext().startActivity(intent);
+                    }
                     break;
                 case 2:
-                    intent = new Intent(view.getContext(), Data_Security.class);
+                    if (score<10)
+                        Toast.makeText(view.getContext(),"Insufficient Score!",Toast.LENGTH_SHORT).show();
+
+                    else
+                    {
+                        intent = new Intent(view.getContext(), Data_Security.class);
+                        intent.putExtra("inTOPIC",getAdapterPosition());
+                        view.getContext().startActivity(intent);
+                    }
                     break;
                 case 3:
-                    intent = new Intent(view.getContext(), Linux_Essentials.class);
+                    if (score<10)
+                        Toast.makeText(view.getContext(),"Insufficient Score!",Toast.LENGTH_SHORT).show();
+
+                    else
+                    {
+                        intent = new Intent(view.getContext(), Linux_Essentials.class);
+                        intent.putExtra("inTOPIC",getAdapterPosition());
+                        view.getContext().startActivity(intent);
+                    }
                     break;
                 case 4:
-                    intent = new Intent(view.getContext(), WAPT_Security.class);
+                    if (score<10)
+                        Toast.makeText(view.getContext(),"Insufficient Score!",Toast.LENGTH_SHORT).show();
+
+                    else
+                    {
+                        intent = new Intent(view.getContext(), WAPT_Security.class);
+                        intent.putExtra("inTOPIC",getAdapterPosition());
+                        view.getContext().startActivity(intent);
+                    }
                     break;
                 case 5:
-                    intent = new Intent(view.getContext(), Application_Security.class);
+                    if (score<10)
+                        Toast.makeText(view.getContext(),"Insufficient Score!",Toast.LENGTH_SHORT).show();
+
+                    else
+                    {
+                        intent = new Intent(view.getContext(), Application_Security.class);
+                        intent.putExtra("inTOPIC",getAdapterPosition());
+                        view.getContext().startActivity(intent);
+                    }
                     break;
                 default:
                     throw new IllegalStateException("Unexpected value: " + topic_no);
             }
-            intent.putExtra("inTOPIC",getAdapterPosition());
-            view.getContext().startActivity(intent);
+
+
         }
     }
 }

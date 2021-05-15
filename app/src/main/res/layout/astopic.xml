@@ -56,7 +56,7 @@
                 android:padding="20dp"
                 android:layout_marginTop="30dp"
                 android:layout_below="@id/topic_title"
-                tools:ignore="HardcodedText" />
+                tools:ignore="HardcodedText"/>
 
 
 
@@ -98,7 +98,7 @@
                         android:freezesText="true"
                         tools:ignore="HardcodedText" />
                     <RelativeLayout
-                        android:id="@+id/qAndA"
+                        android:id="@+id/qAndANS1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="15dp"
@@ -111,7 +111,7 @@
                             android:background="@android:color/darker_gray"
                             android:layout_alignParentTop="true"/>
                         <TextView
-                            android:id="@+id/question"
+                            android:id="@+id/question1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
                             android:text="1. This is a Sample Question?"
@@ -123,11 +123,11 @@
                             tools:ignore="HardcodedText" />
 
                         <RadioGroup
-                            android:id="@+id/radioGroup"
+                            android:id="@+id/radioGroup1"
                             android:layout_marginTop="10dp"
                             android:layout_width="fill_parent"
                             android:layout_height="wrap_content"
-                            android:layout_below="@id/question"
+                            android:layout_below="@id/question1"
                             android:orientation="vertical">
 
                             <RadioButton
@@ -162,12 +162,292 @@
                                 android:text="Radio Button 4"
                                 android:textSize="18sp"/>
                         </RadioGroup>
+
+                        <TextView
+                            android:id="@+id/question2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="2. This is a Sample Question2?"
+                            android:textColor="#FFFFFF"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:layout_marginTop="15dp"
+                            android:layout_below="@id/radioGroup1"
+                            tools:ignore="HardcodedText" />
+                        <RadioGroup
+                            android:id="@+id/radioGroup2"
+                            android:layout_marginTop="10dp"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/question2"
+                            android:orientation="vertical">
+
+                            <RadioButton
+                                android:id="@+id/radioButton5"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Radio Button 5"
+                                android:textColor="@color/white"
+                                android:textSize="18sp"/>
+
+                            <RadioButton
+                                android:id="@+id/radioButton6"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Radio Button 6"
+                                android:textColor="@color/white"
+                                android:textSize="18sp"/>
+
+                            <RadioButton
+                                android:id="@+id/radioButton7"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Radio Button 7"
+                                android:textColor="@color/white"
+                                android:textSize="18sp"/>
+
+                            <RadioButton
+                                android:id="@+id/radioButton8"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:text="Radio Button 8"
+                                android:textSize="18sp"/>
+                        </RadioGroup>
+                        <TextView
+                            android:id="@+id/question3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="3. This is a Sample Question3?"
+                            android:textColor="#FFFFFF"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:layout_marginTop="15dp"
+                            android:layout_below="@id/radioGroup2"
+                            tools:ignore="HardcodedText" />
+                        <RadioGroup
+                            android:id="@+id/radioGroup3"
+                            android:layout_marginTop="10dp"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/question3"
+                            android:orientation="vertical">
+
+                            <RadioButton
+                                android:id="@+id/radioButton9"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Radio Button 9"
+                                android:textColor="@color/white"
+                                android:textSize="18sp"/>
+
+                            <RadioButton
+                                android:id="@+id/radioButton10"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Radio Button 10"
+                                android:textColor="@color/white"
+                                android:textSize="18sp"/>
+
+                            <RadioButton
+                                android:id="@+id/radioButton11"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Radio Button 11"
+                                android:textColor="@color/white"
+                                android:textSize="18sp"/>
+
+                            <RadioButton
+                                android:id="@+id/radioButton12"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:text="Radio Button 12"
+                                android:textSize="18sp"/>
+                        </RadioGroup>
                         <Button
-                            android:id="@+id/evaluate"
+                            android:id="@+id/evaluate1"
                             android:layout_width="150dp"
                             android:layout_height="wrap_content"
                             android:text="EVALUATE"
-                            android:layout_below="@id/radioGroup"
+                            android:layout_below="@id/radioGroup3"
+                            android:layout_marginTop="20dp"
+                            android:layout_centerInParent="true"/>
+                    </RelativeLayout>
+                    <RelativeLayout
+                        android:id="@+id/qAndANS2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="15dp"
+                        android:layout_below="@id/questionnaire"
+                        android:visibility="gone">
+                        <View
+                            android:id="@+id/divider2"
+                            android:layout_width="match_parent"
+                            android:layout_height="1dp"
+                            android:background="@android:color/darker_gray"
+                            android:layout_alignParentTop="true"/>
+                        <TextView
+                            android:id="@+id/question4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="1. This is a Sample Question4?"
+                            android:textColor="#FFFFFF"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:layout_marginTop="15dp"
+                            android:layout_below="@id/divider2"
+                            tools:ignore="HardcodedText" />
+
+                        <RadioGroup
+                            android:id="@+id/radioGroup4"
+                            android:layout_marginTop="10dp"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/question4"
+                            android:orientation="vertical">
+
+                            <RadioButton
+                                android:id="@+id/radioButton13"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Radio Button 13 "
+                                android:textColor="@color/white"
+                                android:textSize="18sp"/>
+
+                            <RadioButton
+                                android:id="@+id/radioButton14"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Radio Button 14"
+                                android:textColor="@color/white"
+                                android:textSize="18sp"/>
+
+                            <RadioButton
+                                android:id="@+id/radioButton15"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Radio Button 15"
+                                android:textColor="@color/white"
+                                android:textSize="18sp"/>
+
+                            <RadioButton
+                                android:id="@+id/radioButton16"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:text="Radio Button 16"
+                                android:textSize="18sp"/>
+                        </RadioGroup>
+
+                        <TextView
+                            android:id="@+id/question5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="2. This is a Sample Question5?"
+                            android:textColor="#FFFFFF"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:layout_marginTop="15dp"
+                            android:layout_below="@id/radioGroup4"
+                            tools:ignore="HardcodedText" />
+                        <RadioGroup
+                            android:id="@+id/radioGroup5"
+                            android:layout_marginTop="10dp"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/question5"
+                            android:orientation="vertical">
+
+                            <RadioButton
+                                android:id="@+id/radioButton17"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Radio Button 17"
+                                android:textColor="@color/white"
+                                android:textSize="18sp"/>
+
+                            <RadioButton
+                                android:id="@+id/radioButton18"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Radio Button 18"
+                                android:textColor="@color/white"
+                                android:textSize="18sp"/>
+
+                            <RadioButton
+                                android:id="@+id/radioButton19"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Radio Button 19"
+                                android:textColor="@color/white"
+                                android:textSize="18sp"/>
+
+                            <RadioButton
+                                android:id="@+id/radioButton20"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:text="Radio Button 20"
+                                android:textSize="18sp"/>
+                        </RadioGroup>
+                        <TextView
+                            android:id="@+id/question6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="3. This is a Sample Question6?"
+                            android:textColor="#FFFFFF"
+                            android:textSize="20sp"
+                            android:textStyle="bold"
+                            android:layout_marginTop="15dp"
+                            android:layout_below="@id/radioGroup5"
+                            tools:ignore="HardcodedText" />
+                        <RadioGroup
+                            android:id="@+id/radioGroup6"
+                            android:layout_marginTop="10dp"
+                            android:layout_width="fill_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_below="@id/question6"
+                            android:orientation="vertical">
+
+                            <RadioButton
+                                android:id="@+id/radioButton21"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Radio Button 21"
+                                android:textColor="@color/white"
+                                android:textSize="18sp"/>
+
+                            <RadioButton
+                                android:id="@+id/radioButton22"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Radio Button 22"
+                                android:textColor="@color/white"
+                                android:textSize="18sp"/>
+
+                            <RadioButton
+                                android:id="@+id/radioButton23"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:text="Radio Button 23"
+                                android:textColor="@color/white"
+                                android:textSize="18sp"/>
+
+                            <RadioButton
+                                android:id="@+id/radioButton24"
+                                android:layout_width="fill_parent"
+                                android:layout_height="wrap_content"
+                                android:textColor="@color/white"
+                                android:text="Radio Button 24"
+                                android:textSize="18sp"/>
+                        </RadioGroup>
+                        <Button
+                            android:id="@+id/evaluate2"
+                            android:layout_width="150dp"
+                            android:layout_height="wrap_content"
+                            android:text="EVALUATE"
+                            android:layout_below="@id/radioGroup6"
                             android:layout_marginTop="20dp"
                             android:layout_centerInParent="true"/>
                     </RelativeLayout>

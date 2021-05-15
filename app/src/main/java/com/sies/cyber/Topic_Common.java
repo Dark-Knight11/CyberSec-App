@@ -2,9 +2,9 @@ package com.sies.cyber;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.widget.ImageButton;
-import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -13,10 +13,15 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+import static com.sies.cyber.Network_Security.SCORE_NS1;
+import static com.sies.cyber.Network_Security.SCORE_NS2;
+import static com.sies.cyber.Network_Security.SHARED_PREFS;
+
 public class Topic_Common extends AppCompatActivity {
+
     RecyclerView mRecyclerView;
     ArrayList<DataModelInner> dataHolder;
-    ImageView lock;
+    int image,points;
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,20 +39,26 @@ public class Topic_Common extends AppCompatActivity {
         ImageButton back = findViewById(R.id.backButton);
         back.setOnClickListener(v -> startActivity(new Intent(Topic_Common.this, MainActivity.class)));
 
-        lock = findViewById(R.id.lock);
-        //lock.setVisibility(View.INVISIBLE);
 
-        DataModelInner ob1, ob2, ob3, ob4, ob5, ob6, ob7;
+        SharedPreferences sharedPref = getSharedPreferences(SHARED_PREFS,MODE_PRIVATE);
+
+        DataModelInner ob1, ob2, ob3, ob4, ob5, ob6;
 
         switch(number){
             case 0:
                 t.setText("Network Security");
-                ob1 = new DataModelInner("What is IP?", number);
-                ob2 = new DataModelInner("What are Ports?",number);
-                ob3 = new DataModelInner("How do IP addresses work",number);
-                ob4 = new DataModelInner("Types of IP addresses",number);
-                ob5 = new DataModelInner("How to look up IP addresses",number);
-                ob6 = new DataModelInner("IP address security threats", number);
+                ob1 = new DataModelInner("What is IP?", number,R.drawable.ic_lock_unlock,15);
+                points = sharedPref.getInt(SCORE_NS1,0);
+                if(points>= 10) image = R.drawable.ic_lock_unlock;
+                else image = R.drawable.ic_lock;
+                ob2 = new DataModelInner("What are Ports?",number,image, points);
+                points = sharedPref.getInt(SCORE_NS2,0);
+                if(points>=10) image = R.drawable.ic_lock_unlock;
+                else image = R.drawable.ic_lock;
+                ob3 = new DataModelInner("How do IP addresses work",number,image,points);
+                ob4 = new DataModelInner("Types of IP addresses",number,R.drawable.ic_lock,0);
+                ob5 = new DataModelInner("How to look up IP addresses",number,R.drawable.ic_lock,0);
+                ob6 = new DataModelInner("IP address security threats", number,R.drawable.ic_lock,0);
                 dataHolder.add(ob1);
                 dataHolder.add(ob2);
                 dataHolder.add(ob3);
@@ -57,11 +68,11 @@ public class Topic_Common extends AppCompatActivity {
                 break;
             case 1:
                 t.setText("Cloud Security");
-                ob1 = new DataModelInner("What is Cloud?",number);
-                ob2 = new DataModelInner("What is Cloud Security?",number);
-                ob3 = new DataModelInner("How does it Work?",number);
-                ob4 = new DataModelInner("Cloud security risks",number);
-                ob5 = new DataModelInner("Types of Attacks",number);
+                ob1 = new DataModelInner("What is Cloud?",number,R.drawable.ic_lock_unlock,0);
+                ob2 = new DataModelInner("What is Cloud Security?",number,R.drawable.ic_lock,0);
+                ob3 = new DataModelInner("How does it Work?",number,R.drawable.ic_lock,0);
+                ob4 = new DataModelInner("Cloud security risks",number,R.drawable.ic_lock,0);
+                ob5 = new DataModelInner("Types of Attacks",number,R.drawable.ic_lock,0);
                 dataHolder.add(ob1);
                 dataHolder.add(ob2);
                 dataHolder.add(ob3);
@@ -70,11 +81,11 @@ public class Topic_Common extends AppCompatActivity {
                 break;
             case 2:
                 t.setText("Data Security");
-                ob1 = new DataModelInner("What is Data Security?",number);
-                ob2 = new DataModelInner("Why Data Security?",number);
-                ob3 = new DataModelInner("Types of threats",number);
-                ob4 = new DataModelInner("Solutions",number);
-                ob5 = new DataModelInner("Regulations",number);
+                ob1 = new DataModelInner("What is Data Security?",number,R.drawable.ic_lock_unlock,0);
+                ob2 = new DataModelInner("Why Data Security?",number,R.drawable.ic_lock,0);
+                ob3 = new DataModelInner("Types of threats",number,R.drawable.ic_lock,0);
+                ob4 = new DataModelInner("Solutions",number,R.drawable.ic_lock,0);
+                ob5 = new DataModelInner("Regulations",number,R.drawable.ic_lock,0);
                 dataHolder.add(ob1);
                 dataHolder.add(ob2);
                 dataHolder.add(ob3);
@@ -83,12 +94,12 @@ public class Topic_Common extends AppCompatActivity {
                 break;
             case 3:
                 t.setText("Linux Essentials");
-                ob1 = new DataModelInner("What is Linux?",number);
-                ob2 = new DataModelInner("Why Linux?",number);
-                ob3 = new DataModelInner("Virtual Machines",number);
-                ob4 = new DataModelInner("WSL",number);
-                ob5 = new DataModelInner("Docker",number);
-                ob6 = new DataModelInner("Basic Linux Commands", number);
+                ob1 = new DataModelInner("What is Linux?",number,R.drawable.ic_lock_unlock,0);
+                ob2 = new DataModelInner("Why Linux?",number,R.drawable.ic_lock,0);
+                ob3 = new DataModelInner("Virtual Machines",number,R.drawable.ic_lock,0);
+                ob4 = new DataModelInner("WSL",number,R.drawable.ic_lock,0);
+                ob5 = new DataModelInner("Docker",number,R.drawable.ic_lock,0);
+                ob6 = new DataModelInner("Basic Linux Commands", number,R.drawable.ic_lock,0);
                 dataHolder.add(ob1);
                 dataHolder.add(ob2);
                 dataHolder.add(ob3);
@@ -98,11 +109,11 @@ public class Topic_Common extends AppCompatActivity {
                 break;
             case 4:
                 t.setText("Web App Pen-Testing");
-                ob1 = new DataModelInner("Basics of Web",number);
-                ob2 = new DataModelInner("Vulnerabilities",number);
-                ob3 = new DataModelInner("OWASP Top 10",number);
-                ob4 = new DataModelInner("Bug Bounty Hunting",number);
-                ob5 = new DataModelInner("Pentesting",number);
+                ob1 = new DataModelInner("Basics of Web",number,R.drawable.ic_lock_unlock,0);
+                ob2 = new DataModelInner("Vulnerabilities",number,R.drawable.ic_lock,0);
+                ob3 = new DataModelInner("OWASP Top 10",number,R.drawable.ic_lock,0);
+                ob4 = new DataModelInner("Bug Bounty Hunting",number,R.drawable.ic_lock,0);
+                ob5 = new DataModelInner("Pentesting",number,R.drawable.ic_lock,0);
                 dataHolder.add(ob1);
                 dataHolder.add(ob2);
                 dataHolder.add(ob3);
@@ -111,11 +122,11 @@ public class Topic_Common extends AppCompatActivity {
                 break;
             case 5:
                 t.setText("Application Security");
-                ob1 = new DataModelInner("Basics of App dev",number);
-                ob2 = new DataModelInner("Vulnerabilities",number);
-                ob3 = new DataModelInner("OWASP",number);
-                ob4 = new DataModelInner("Pentesting",number);
-                ob5 = new DataModelInner("RVDP",number);
+                ob1 = new DataModelInner("Basics of App dev",number,R.drawable.ic_lock_unlock,0);
+                ob2 = new DataModelInner("Vulnerabilities",number,R.drawable.ic_lock,0);
+                ob3 = new DataModelInner("OWASP",number,R.drawable.ic_lock,0);
+                ob4 = new DataModelInner("Pentesting",number,R.drawable.ic_lock,0);
+                ob5 = new DataModelInner("RVDP",number,R.drawable.ic_lock,0);
                 dataHolder.add(ob1);
                 dataHolder.add(ob2);
                 dataHolder.add(ob3);
