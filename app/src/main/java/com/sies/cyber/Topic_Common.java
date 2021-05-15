@@ -61,7 +61,7 @@ public class Topic_Common extends AppCompatActivity {
                 ob2 = new DataModelInner("What is Cloud Security?",number);
                 ob3 = new DataModelInner("How does it Work?",number);
                 ob4 = new DataModelInner("Cloud security risks",number);
-                ob5 = new DataModelInner("Heading5",number);
+                ob5 = new DataModelInner("Types of Attacks",number);
                 dataHolder.add(ob1);
                 dataHolder.add(ob2);
                 dataHolder.add(ob3);
@@ -70,11 +70,11 @@ public class Topic_Common extends AppCompatActivity {
                 break;
             case 2:
                 t.setText("Data Security");
-                ob1 = new DataModelInner("Heading1",number);
-                ob2 = new DataModelInner("Heading2",number);
-                ob3 = new DataModelInner("Heading3",number);
-                ob4 = new DataModelInner("Heading4",number);
-                ob5 = new DataModelInner("Heading5",number);
+                ob1 = new DataModelInner("What is Data Security?",number);
+                ob2 = new DataModelInner("Why Data Security?",number);
+                ob3 = new DataModelInner("Types of threats",number);
+                ob4 = new DataModelInner("Solutions",number);
+                ob5 = new DataModelInner("Regulations",number);
                 dataHolder.add(ob1);
                 dataHolder.add(ob2);
                 dataHolder.add(ob3);
@@ -83,24 +83,26 @@ public class Topic_Common extends AppCompatActivity {
                 break;
             case 3:
                 t.setText("Linux Essentials");
-                ob1 = new DataModelInner("Heading1",number);
-                ob2 = new DataModelInner("Heading2",number);
-                ob3 = new DataModelInner("Heading3",number);
-                ob4 = new DataModelInner("Heading4",number);
-                ob5 = new DataModelInner("Heading5",number);
+                ob1 = new DataModelInner("What is Linux?",number);
+                ob2 = new DataModelInner("Why Linux?",number);
+                ob3 = new DataModelInner("Virtual Machines",number);
+                ob4 = new DataModelInner("WSL",number);
+                ob5 = new DataModelInner("Docker",number);
+                ob6 = new DataModelInner("Basic Linux Commands", number);
                 dataHolder.add(ob1);
                 dataHolder.add(ob2);
                 dataHolder.add(ob3);
                 dataHolder.add(ob4);
                 dataHolder.add(ob5);
+                dataHolder.add(ob6);
                 break;
             case 4:
                 t.setText("Web App Pen-Testing");
-                ob1 = new DataModelInner("Heading1",number);
-                ob2 = new DataModelInner("Heading2",number);
-                ob3 = new DataModelInner("Heading3",number);
-                ob4 = new DataModelInner("Heading4",number);
-                ob5 = new DataModelInner("Heading5",number);
+                ob1 = new DataModelInner("Basics of Web",number);
+                ob2 = new DataModelInner("Vulnerabilities",number);
+                ob3 = new DataModelInner("OWASP Top 10",number);
+                ob4 = new DataModelInner("Bug Bounty Hunting",number);
+                ob5 = new DataModelInner("Pentesting",number);
                 dataHolder.add(ob1);
                 dataHolder.add(ob2);
                 dataHolder.add(ob3);
@@ -109,20 +111,16 @@ public class Topic_Common extends AppCompatActivity {
                 break;
             case 5:
                 t.setText("Application Security");
-                ob1 = new DataModelInner("Heading1",number);
-                ob2 = new DataModelInner("Heading2",number);
-                ob3 = new DataModelInner("Heading3",number);
-                ob4 = new DataModelInner("Heading4",number);
-                ob5 = new DataModelInner("Heading5",number);
-                ob6 = new DataModelInner("Heading6",number);
-                ob7 = new DataModelInner("Heading7",number);
+                ob1 = new DataModelInner("Basics of App dev",number);
+                ob2 = new DataModelInner("Vulnerabilities",number);
+                ob3 = new DataModelInner("OWASP",number);
+                ob4 = new DataModelInner("Pentesting",number);
+                ob5 = new DataModelInner("RVDP",number);
                 dataHolder.add(ob1);
                 dataHolder.add(ob2);
                 dataHolder.add(ob3);
                 dataHolder.add(ob4);
                 dataHolder.add(ob5);
-                dataHolder.add(ob6);
-                dataHolder.add(ob7);
                 break;
             default:
                 throw new IllegalStateException("Unexpected value: " + number);

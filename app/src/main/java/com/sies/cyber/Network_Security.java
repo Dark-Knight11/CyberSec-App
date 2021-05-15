@@ -1,5 +1,6 @@
 package com.sies.cyber;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -48,7 +49,7 @@ public class Network_Security extends AppCompatActivity {
                         "In order to send and direct data across a network, computers need to be able to identify destinations and origins. This identification is an IP—Internet Protocol—address. An IP address is just a set of four numbers between 1 and 254, separated by dots. An example of an IP address is 173.194.43.7.\n" +
                         "\n" +
                         getString(R.string.hyperlink);
-s
+
                 topic_table = "What is IP?";
                 break;
             case 1:
@@ -79,6 +80,7 @@ s
         content.setText(text);
     }
 
+    @SuppressLint("SetTextI18n")
     private void onClick(View view) {
         if (view == questionnaire)
         {
