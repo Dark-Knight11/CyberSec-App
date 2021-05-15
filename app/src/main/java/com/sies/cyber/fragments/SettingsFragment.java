@@ -1,11 +1,15 @@
 package com.sies.cyber.fragments;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
@@ -14,12 +18,28 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.sies.cyber.R;
 import com.sies.cyber.Sign_In;
 
+import static android.content.Context.MODE_PRIVATE;
+import static com.sies.cyber.Network_Security.SHARED_PREFS;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link SettingsFragment#newInstance} factory method to
  * create an instance of this fragment.
  */
 public class SettingsFragment extends Fragment {
+
+    public static final String PERSON_NAME = "Person_Name";
+    public static final String PERSON_USER_NAME = "Person_Name";
+    public static final String PERSON_EMAIL = "Person_Name";
+    public static final String PERSON_AGE = "Person_Name";
+    public static final String PERSON_DESC = "Person_Name";
+
+    EditText name, age, username, email, description;
+    Button logOut,editButton;
+    int count=0;
+
+    SharedPreferences sharedPref;
+    SharedPreferences.Editor editor;
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -68,14 +88,50 @@ public class SettingsFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View RootView = inflater.inflate(R.layout.fragment_settings, container, false);
-        Button logOut = RootView.findViewById(R.id.button3);
+        sharedPref = this.getActivity().getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
+        name = RootView.findViewById(R.id.personName);
+        age = RootView.findViewById(R.id.personAge);
+        username = RootView.findViewById(R.id.personUsername);
+        email = RootView.findViewById(R.id.personEmail);
+        description = RootView.findViewById(R.id.personDesc);
+
+        name.setText(sharedPref.getString(PERSON_NAME, "Anand"));
+        age.setText(sharedPref.getString(PERSON_AGE, "20"));
+        username.setText(sharedPref.getString(PERSON_USER_NAME, "anandb235"));
+        email.setText(sharedPref.getString(PERSON_EMAIL, "borkaranand19@siesgst.ac.in"));
+        description.setText(sharedPref.getString(PERSON_DESC,"--"));
+
+        editButton = RootView.findViewById(R.id.button4);
+        editButton.setOnClickListener(this::onClick);
+
+        logOut = RootView.findViewById(R.id.button3);
         logOut.setOnClickListener(this::onClick);
         return RootView;
     }
 
     private void onClick(View v) {
-        FirebaseAuth.getInstance().signOut();
-        Toast.makeText(getContext(), "Logged Out", Toast.LENGTH_SHORT).show();
-        startActivity(new Intent(getActivity(), Sign_In.class));
+        if(v==logOut)
+        {
+            FirebaseAuth.getInstance().signOut();
+            Toast.makeText(getContext(), "Logged Out", Toast.LENGTH_SHORT).show();
+            startActivity(new Intent(getActivity(), Sign_In.class));
+        }
+        if(v==editButton)
+        {
+            editor = sharedPref.edit();
+            editor.putString(PERSON_NAME, name.getText().toString());
+            editor.apply();
+            editor.putString(PERSON_AGE, age.getText().toString());
+            editor.apply();
+            editor.putString(PERSON_USER_NAME, username.getText().toString());
+            editor.apply();
+            editor.putString(PERSON_EMAIL, email.getText().toString());
+            editor.apply();
+            editor.putString(PERSON_DESC, description.getText().toString());
+            editor.apply();
+
+            Toast.makeText(this.getActivity(), "Information Saved Successfully", Toast.LENGTH_SHORT).show();
+        }
+
     }
 }
