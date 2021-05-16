@@ -9,7 +9,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
@@ -18,7 +17,6 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.sies.cyber.R;
 import com.sies.cyber.Sign_In;
 
-import static android.content.Context.MODE_PRIVATE;
 import static com.sies.cyber.Network_Security.SHARED_PREFS;
 
 /**
@@ -29,10 +27,10 @@ import static com.sies.cyber.Network_Security.SHARED_PREFS;
 public class SettingsFragment extends Fragment {
 
     public static final String PERSON_NAME = "Person_Name";
-    public static final String PERSON_USER_NAME = "Person_Name";
-    public static final String PERSON_EMAIL = "Person_Name";
-    public static final String PERSON_AGE = "Person_Name";
-    public static final String PERSON_DESC = "Person_Name";
+    public static final String PERSON_USER_NAME = "User_Name";
+    public static final String PERSON_EMAIL = "Person_Email";
+    public static final String PERSON_AGE = "Person_Age";
+    public static final String PERSON_DESC = "Person_Desc";
 
     EditText name, age, username, email, description;
     Button logOut,editButton;
