@@ -17,6 +17,8 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.sies.cyber.R;
 import com.sies.cyber.Sign_In;
 
+import java.util.Objects;
+
 import static com.sies.cyber.Network_Security.SHARED_PREFS;
 
 /**
@@ -86,7 +88,7 @@ public class SettingsFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View RootView = inflater.inflate(R.layout.fragment_settings, container, false);
-        sharedPref = this.getActivity().getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
+        sharedPref = Objects.requireNonNull(this.getActivity()).getSharedPreferences(SHARED_PREFS, Context.MODE_PRIVATE);
         name = RootView.findViewById(R.id.personName);
         age = RootView.findViewById(R.id.personAge);
         username = RootView.findViewById(R.id.personUsername);

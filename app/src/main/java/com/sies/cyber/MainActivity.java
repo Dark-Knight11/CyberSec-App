@@ -1,14 +1,12 @@
 package com.sies.cyber;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
-import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 
+import com.sies.cyber.fragments.CTFfragmnet;
 import com.sies.cyber.fragments.HomeFragment;
 import com.sies.cyber.fragments.SettingsFragment;
 
@@ -21,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         //getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         View settings = findViewById(R.id.page_2);
         View home = findViewById(R.id.page_1);
+        View ctf = findViewById(R.id.page_3);
 
 
         // Begin the transaction
@@ -32,5 +31,6 @@ public class MainActivity extends AppCompatActivity {
         // Complete the changes added
         settings.setOnClickListener(v -> ft.beginTransaction().replace(R.id.fl_wrapper, new SettingsFragment(), "Settings").commit());
         home.setOnClickListener(v -> ft.beginTransaction().replace(R.id.fl_wrapper, new HomeFragment(), "Home").commit());
+        ctf.setOnClickListener(v -> ft.beginTransaction().replace(R.id.fl_wrapper, new CTFfragmnet(), "Ctf").commit());
     }
 }
