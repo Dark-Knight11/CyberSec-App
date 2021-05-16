@@ -1,25 +1,19 @@
 package com.sies.cyber.fragments;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
-import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
-import android.text.SpannableString;
-import android.text.Spanned;
-import android.text.method.LinkMovementMethod;
-import android.text.style.ClickableSpan;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-import android.widget.Toast;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.RequiresApi;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
+import com.sies.cyber.CTFadapter;
 import com.sies.cyber.CtfTimeService;
 import com.sies.cyber.CtfsInfo;
 import com.sies.cyber.R;
@@ -35,25 +29,25 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link CTFfragmnet#newInstance} factory method to
+ * Use the {@link CTFfragment#newInstance} factory method to
  * create an instance of this fragment.
  */
-public class CTFfragmnet extends Fragment {
+public class CTFfragment extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-
-    TextView ctfName, startDate, endDate;
-    private List<CtfsInfo> res;
+    RecyclerView ctfRecyclerView;
+    List<CtfsInfo> res;
 
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
 
-    public CTFfragmnet() {
+
+    public CTFfragment() {
         // Required empty public constructor
     }
 
@@ -66,8 +60,8 @@ public class CTFfragmnet extends Fragment {
      * @return A new instance of fragment CTFfragmnet.
      */
     // TODO: Rename and change types and number of parameters
-    public static CTFfragmnet newInstance(String param1, String param2) {
-        CTFfragmnet fragment = new CTFfragmnet();
+    public static CTFfragment newInstance(String param1, String param2) {
+        CTFfragment fragment = new CTFfragment();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
@@ -91,9 +85,9 @@ public class CTFfragmnet extends Fragment {
                              Bundle savedInstanceState) {
 
         View RootView = inflater.inflate(R.layout.fragment_ctf, container, false);
-        ctfName = RootView.findViewById(R.id.ctf);
-        startDate = RootView.findViewById(R.id.start);
-        endDate = RootView.findViewById(R.id.end);
+        ctfRecyclerView = RootView.findViewById(R.id.ctf_recycler_view);
+
+        ctfRecyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
         int limit = 100;
         // start timestamp
@@ -113,25 +107,7 @@ public class CTFfragmnet extends Fragment {
             @Override
             public void onResponse(Call<List<CtfsInfo>> call, Response<List<CtfsInfo>> response) {
                 res = response.body(); // json response stored in list
-                Toast.makeText(getContext(), Integer.toString(res.size()),Toast.LENGTH_SHORT).show(); // prints total no of Ctf's
-
-                // making title a hyperlink
-                SpannableString str = new SpannableString(res.get(0).getTitle());
-                ClickableSpan span1 = new ClickableSpan() {
-                    @Override
-                    public void onClick(@NonNull View widget) {
-                        String url = res.get(0).getCtftime_url(); // link to ctf
-                        Intent i = new Intent(Intent.ACTION_VIEW);
-                        i.setData(Uri.parse(url));
-                        startActivity(i);
-                    }
-                };
-                str.setSpan(span1 ,0, str.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
-                ctfName.setText(str);
-                ctfName.setMovementMethod(LinkMovementMethod.getInstance());
-
-                startDate.setText(res.get(0).getStart()); // start Date
-                endDate.setText(res.get(0).getFinish()); // End Date
+                ctfRecyclerView.setAdapter(new CTFadapter(res));
             }
 
             @Override
@@ -139,7 +115,6 @@ public class CTFfragmnet extends Fragment {
                 Log.i("on Failure",t.getMessage());
             }
         });
-
 
         // Inflate the layout for this fragment
         return RootView;
