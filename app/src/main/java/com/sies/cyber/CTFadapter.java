@@ -1,5 +1,6 @@
 package com.sies.cyber;
 
+import android.graphics.Color;
 import android.text.Html;
 import android.text.method.LinkMovementMethod;
 import android.view.LayoutInflater;
@@ -17,9 +18,10 @@ import java.util.List;
 public class CTFadapter extends RecyclerView.Adapter<CTFadapter.myViewHolder>{
     List<CtfsInfo> res;
     int count = 0;
-    RelativeLayout desc;
 
-    public CTFadapter(List<CtfsInfo> res) {this.res = res;}
+    public CTFadapter(List<CtfsInfo> res) {
+        this.res = res;
+    }
 
     @NonNull
     @Override
@@ -33,33 +35,28 @@ public class CTFadapter extends RecyclerView.Adapter<CTFadapter.myViewHolder>{
         holder.start_time.setText(res.get(position).getStart());
         holder.main_link.setMovementMethod(LinkMovementMethod.getInstance());
         holder.main_link.setText(Html.fromHtml(getHyperLink(res.get(position).getTitle(),res.get(position).getCtftime_url())));
+        holder.main_link.setMovementMethod(LinkMovementMethod.getInstance());
+        holder.main_link.setLinkTextColor(Color.parseColor("#E3000B"));
         holder.end_time.setText(res.get(position).getFinish());
         holder.description.setText(res.get(position).getDescription());
     }
 
     private String getHyperLink(String title, String ctftime_url) {
 
-        return "<a href='"+ctftime_url+"'>"+title+"</a>";
+        String str = "<a href='"+ctftime_url+"'>"+title+"</a>";
+        return str;
 
-//            SpannableString str = new SpannableString(title);
-//            ClickableSpan span1 = new ClickableSpan() {
-//                @Override
-//                public void onClick(@NonNull View widget) {
-//                    String url = ctftime_url; // link to ctf
-//                    // Intent i = new Intent(Intent.ACTION_VIEW);
-//            i.setData(Uri.parse(url));
-//            view.getContext().startActivity(i);
-//                }
-//            };
-//            str.setSpan(span1 ,0, str.length(), Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
     }
 
     @Override
-    public int getItemCount() {return res.size();}
+    public int getItemCount() {
+        return res.size();
+    }
 
     class myViewHolder extends RecyclerView.ViewHolder {
         TextView start_time,main_link,end_time,description;
         RelativeLayout description_box;
+        String url;
         public myViewHolder(@NonNull View itemView) {
             super(itemView);
             start_time = itemView.findViewById(R.id.start_time);
@@ -67,13 +64,19 @@ public class CTFadapter extends RecyclerView.Adapter<CTFadapter.myViewHolder>{
             end_time = itemView.findViewById(R.id.end_time);
             description = itemView.findViewById(R.id.description);
             description_box = itemView.findViewById(R.id.description_box);
-            itemView.setOnClickListener(v -> {
-                if (count%2==0)
-                    description_box.setVisibility(View.VISIBLE);
-                else
-                    description_box.setVisibility(View.GONE);
-                count++;
-            });
+            itemView.setOnClickListener(this::onClick);
+        }
+
+        private void onClick(View view) {
+            if (count%2==0)
+                description_box.setVisibility(View.VISIBLE);
+            else
+                description_box.setVisibility(View.GONE);
+
+            count++;
+
+
+
         }
     }
 }

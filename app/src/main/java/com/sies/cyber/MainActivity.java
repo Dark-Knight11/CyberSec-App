@@ -21,7 +21,6 @@ public class MainActivity extends AppCompatActivity {
         View home = findViewById(R.id.page_1);
         View ctf = findViewById(R.id.page_3);
 
-
         // Begin the transaction
         FragmentManager ft = getSupportFragmentManager();
         // FragmentTransaction ft = getSupportFragmentManager().beginTransaction();
@@ -32,5 +31,6 @@ public class MainActivity extends AppCompatActivity {
         settings.setOnClickListener(v -> ft.beginTransaction().replace(R.id.fl_wrapper, new SettingsFragment(), "Settings").commit());
         home.setOnClickListener(v -> ft.beginTransaction().replace(R.id.fl_wrapper, new HomeFragment(), "Home").commit());
         ctf.setOnClickListener(v -> ft.beginTransaction().replace(R.id.fl_wrapper, new CTFfragment(), "Ctf").commit());
+
     }
 }

@@ -4,7 +4,7 @@
     <item
         android:id="@+id/more"
         android:title="@string/frag2"
-        app:showAsAction="never" />
+        android:enabled="true" />
     <item
         android:id="@+id/log_out"
         android:title="@string/log_out"
